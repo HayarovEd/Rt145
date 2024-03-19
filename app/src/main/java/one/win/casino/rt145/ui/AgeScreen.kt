@@ -1,6 +1,7 @@
 package one.win.casino.rt145.ui
 
 import android.app.Activity
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -32,8 +33,6 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
@@ -43,11 +42,13 @@ import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
 import one.win.casino.rt145.ui.theme.red
 import one.win.casino.rt145.ui.theme.white
+
 @Preview
 @Composable
 fun AgeScreen(
     modifier: Modifier = Modifier
 ) {
+    BackHandler {}
     val day = remember { mutableIntStateOf(1) }
     val month = remember { mutableIntStateOf(1) }
     val year = remember { mutableIntStateOf(2009) }

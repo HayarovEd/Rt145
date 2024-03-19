@@ -349,4 +349,9 @@
     <string name="as_from_app">из приложения…</string>
     <string name="as_continue">ПРОДОЛЖИТЬ</string>
 
+    //EnterScreen
+    <string name="es_enter">ВОЙТИ</string>
+    <string name="es_match_schedule">Расписание матчей</string>
+
+
 </resources>
