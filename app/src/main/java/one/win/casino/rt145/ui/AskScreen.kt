@@ -28,11 +28,9 @@ import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
 import one.win.casino.rt145.ui.theme.red
 import one.win.casino.rt145.ui.theme.white
-import one.win.casino.rt145.ui.uikit.Banner
-
 
 @Composable
-fun EnterScreen(
+fun AskScreen(
     modifier: Modifier = Modifier
 ) {
     BackHandler {
@@ -50,65 +48,66 @@ fun EnterScreen(
         Column(
             modifier = modifier
                 .fillMaxWidth()
-                .padding(21.dp),
+                .padding(top = 70.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Image(
-                modifier = modifier.fillMaxWidth(),
-                painter = painterResource(id = R.drawable.men),
-                contentDescription = "",
-                contentScale = ContentScale.FillWidth
+            Text(
+                text = stringResource(id = R.string.is_quiz),
+                style = TextStyle(
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight(600),
+                    textAlign = TextAlign.Center,
+                    color = white
+                )
             )
-            Spacer(modifier = modifier.height(35.dp))
+            Spacer(modifier = modifier.height(40.dp))
             Button(
+                modifier = modifier
+                    .padding(horizontal = 77.dp)
+                    .fillMaxWidth(),
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = red
                 ),
-                contentPadding = PaddingValues(
-                    horizontal = 45.dp, vertical = 12.dp
-                ),
+                contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
                     //////////////
                 }
             ) {
                 Text(
-                    text = stringResource(id = R.string.es_enter),
+                    text = stringResource(id = R.string.go_to_quiz),
                     style = TextStyle(
-                        fontSize = 36.sp,
-                        fontWeight = FontWeight(700),
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight(600),
                         textAlign = TextAlign.Center,
                         color = white
                     )
                 )
             }
-        }
-        Button(
-            modifier = modifier
-                .padding(bottom = 20.dp)
-                .align(alignment = Alignment.BottomCenter),
-            shape = RoundedCornerShape(12.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = white
-            ),
-            contentPadding = PaddingValues(
-                horizontal = 45.dp, vertical = 12.dp
-            ),
-            onClick = {
-                //////////////
-            }
-        ) {
-            Text(
-                text = stringResource(id = R.string.es_match_schedule),
-                style = TextStyle(
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight(600),
-                    textAlign = TextAlign.Center,
-                    color = red
+            Spacer(modifier = modifier.height(30.dp))
+            Button(
+                modifier = modifier
+                    .padding(horizontal = 77.dp)
+                    .fillMaxWidth(),
+                shape = RoundedCornerShape(12.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = white
+                ),
+                contentPadding = PaddingValues(vertical = 12.dp),
+                onClick = {
+                    //////////////
+                }
+            ) {
+                Text(
+                    text = stringResource(id = R.string.skip),
+                    style = TextStyle(
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight(600),
+                        textAlign = TextAlign.Center,
+                        color = red
+                    )
                 )
-            )
+            }
         }
-        Spacer(modifier = modifier.height(10.dp))
-        Banner()
     }
 }

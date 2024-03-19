@@ -353,5 +353,20 @@
     <string name="es_enter">ВОЙТИ</string>
     <string name="es_match_schedule">Расписание матчей</string>
 
+    //AskScreen
+    <string name="is_quiz">Уверен в своих\nспортивных знаниях?</string>
+    <string name="go_to_quiz">ПРОЙТИ КВИЗ</string>
+    <string name="skip">Пропустить</string>
+
+    <string name="football">Футбол</string>
+    <string name="basketball">Баскетбол</string>
+    <string name="hockey">Хоккей</string>
+    <string name="volleyball">Волейбол</string>
+    <string name="tennis">Теннис</string>
+    <string name="boxing">Бокс</string>
+    <string name="categoty">Категория</string>
+    <string name="all_in_category">Всего в категории</string>
+    <string name="questions">вопросов.</string>
+
 
 </resources>
