@@ -336,4 +336,17 @@
     <string name="bx_response_10_1">В килограммах</string>
     <string name="bx_response_10_2">В центнерах</string>
     <string name="bx_response_10_3">В унциях</string>
+
+
+    //AgeScreen
+    <string name="as_your_age">ВАШ ВОЗРАСТ</string>
+    <string name="as_day">День</string>
+    <string name="as_month">Месяц</string>
+    <string name="as_year">Год</string>
+    <string name="as_incorrect_age">Введенный возраст не соответствует\nправилам приложения.</string>
+    <string name="as_change_age">Вы можете изменить дату рождения\nили</string>
+    <string name="as_exit">Выйти</string>
+    <string name="as_from_app">из приложения…</string>
+    <string name="as_continue">ПРОДОЛЖИТЬ</string>
+
 </resources>

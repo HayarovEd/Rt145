@@ -75,26 +75,22 @@ class RemoteRepositoryRt145Impl @Inject constructor(
                 Backendless.initApp(application, APPLICATION_ID, ANDROID_API_KEY)
                 val result = Backendless.Data.of(TABLE_NAME).findById(OBJECT_ID_KEY)[NAME]
                 if (result != null) {
-                    if (result != POLITIC_URL) {
-                        try {
-                            val client = OkHttpClient()
-                            val request = Request.Builder()
-                                .url(result.toString())
-                                .get()
-                                .addHeader("User-Agent", "Mozilla/5.0")
-                                .build()
-                            val response = client.newCall(request).execute()
-                            if (response.isSuccessful) {
-                                ResourceRt145.Success(response.request().url().toString())
-                            } else {
-                                ResourceRt145.Error("bad")
-                            }
-                        } catch (e: Exception) {
-                            e.printStackTrace()
-                            ResourceRt145.Error(e.message ?: "An unknown error")
+                    try {
+                        val client = OkHttpClient()
+                        val request = Request.Builder()
+                            .url(result.toString())
+                            .get()
+                            .addHeader("User-Agent", "Mozilla/5.0")
+                            .build()
+                        val response = client.newCall(request).execute()
+                        if (response.isSuccessful) {
+                            ResourceRt145.Success(response.request().url().toString())
+                        } else {
+                            ResourceRt145.Error("bad")
                         }
-                    } else {
-                        ResourceRt145.Error("politic url")
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        ResourceRt145.Error(e.message ?: "An unknown error")
                     }
                 } else {
                     ResourceRt145.Error("empty data")
