@@ -350,7 +350,7 @@
     <string name="as_continue">ПРОДОЛЖИТЬ</string>
 
     //EnterScreen
-    <string name="es_enter">ВОЙТИ</string>
+    <string name="es_enter">Ставка</string>
     <string name="es_match_schedule">Расписание матчей</string>
 
     //AskScreen
