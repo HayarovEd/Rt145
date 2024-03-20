@@ -7,7 +7,7 @@ interface RemoteRepositoryRt145 {
     suspend fun getFootballData(): ResourceRt145<List<GameDataRt145>>
     suspend fun getIceHockeyData(): ResourceRt145<List<GameDataRt145>>
     suspend fun getBasketballData(): ResourceRt145<List<GameDataRt145>>
-    suspend fun getUrl(): ResourceRt145<String>
-    suspend fun getSharedUrl(): String?
-    suspend fun setSharedUrl(date: String)
+    suspend fun getUrlRt145(): ResourceRt145<String>
+    suspend fun getSharedUrlRt145(): String?
+    suspend fun setSharedUrlRt145(date: String)
 }

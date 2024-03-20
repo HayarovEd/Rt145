@@ -28,7 +28,7 @@ class MainViewModelRt145 @Inject constructor(
 
     init {
         viewModelScope.launch {
-            val savedUrl = remoteRepositoryRt145.getSharedUrl()
+            val savedUrl = remoteRepositoryRt145.getSharedUrlRt145()
             async { getFootballData() }.onAwait
             async { getBasketballData() }.onAwait
             async { getHockeyData() }.onAwait
@@ -37,9 +37,9 @@ class MainViewModelRt145 @Inject constructor(
                 getUrl()
             } else {
                 _state.value.copy(
-                    url = savedUrl
+                    urlRt145 = savedUrl
                 )
-                    .updateStateUI()
+                    .updateStateUIRt145()
             }
         }
     }
@@ -56,7 +56,7 @@ class MainViewModelRt145 @Inject constructor(
                 _state.value.copy(
                     footballData = result.data ?: emptyList(),
                 )
-                    .updateStateUI()
+                    .updateStateUIRt145()
             }
         }
     }
@@ -72,7 +72,7 @@ class MainViewModelRt145 @Inject constructor(
                 _state.value.copy(
                     basketballData = result.data ?: emptyList(),
                 )
-                    .updateStateUI()
+                    .updateStateUIRt145()
             }
         }
     }
@@ -88,13 +88,13 @@ class MainViewModelRt145 @Inject constructor(
                 _state.value.copy(
                     hockeyData = result.data ?: emptyList(),
                 )
-                    .updateStateUI()
+                    .updateStateUIRt145()
             }
         }
     }
 
     private suspend fun getUrl() {
-        when (val result = remoteRepositoryRt145.getUrl()) {
+        when (val result = remoteRepositoryRt145.getUrlRt145()) {
             is ResourceRt145.Error -> {
                 Log.d("MainViewModelRt145", "url error -${result.message}")
             }
@@ -103,40 +103,40 @@ class MainViewModelRt145 @Inject constructor(
                 if (result.data != null) {
                     Log.d("MainViewModelRt145", "url SUCCESS -${result.data}")
                     _state.value.copy(
-                        url = result.data
+                        urlRt145 = result.data
                     )
-                        .updateStateUI()
-                    remoteRepositoryRt145.setSharedUrl(result.data)
+                        .updateStateUIRt145()
+                    remoteRepositoryRt145.setSharedUrlRt145(result.data)
                 }
             }
         }
     }
 
-    fun onEvent(event: MainEventRt145) {
-        when (event) {
+    fun onEvent(eventRt145: MainEventRt145) {
+        when (eventRt145) {
             is MainEventRt145.OnAnswer -> {
-                calculate(
-                    answer = event.answer,
-                    rightIndex = event.rightIndex
+                calculateRt145(
+                    answerRt145 = eventRt145.answer,
+                    rightIndex = eventRt145.rightIndex
                 )
             }
 
             is MainEventRt145.OnSetScreenState -> {
                 _state.value.copy(
-                    screenStateRt145 = event.screenStateRt145
+                    screenStateRt145 = eventRt145.screenStateRt145
                 )
-                    .updateStateUI()
-                if (event.screenStateRt145 == ScreenStateRt145.EnterState) {
+                    .updateStateUIRt145()
+                if (eventRt145.screenStateRt145 == ScreenStateRt145.EnterState) {
                     _state.value.copy(
                         countGood = 0,
                         countTasks = 1
                     )
-                        .updateStateUI()
+                        .updateStateUIRt145()
                 }
             }
 
             is MainEventRt145.OnSetTypeQuizState -> {
-                val currentTasks = when (event.selectorQuizRt145) {
+                val currentTasks = when (eventRt145.selectorQuizRt145) {
                     SelectorQuizRt145.FOOTBALL_QUIZ -> quizFootball.shuffled()
                     SelectorQuizRt145.BASKETBALL_QUIZ -> quizBasketball.shuffled()
                     SelectorQuizRt145.HOCKEY_QUIZ -> quizHokkey.shuffled()
@@ -145,37 +145,37 @@ class MainViewModelRt145 @Inject constructor(
                     SelectorQuizRt145.BOXING_QUIZ -> quizBoxing.shuffled()
                 }
                 _state.value.copy(
-                    selectorQuizRt145 = event.selectorQuizRt145,
-                    tasks = currentTasks,
+                    selectorQuizRt145 = eventRt145.selectorQuizRt145,
+                    tasksRt145 = currentTasks,
                 )
-                    .updateStateUI()
+                    .updateStateUIRt145()
             }
         }
     }
 
-    private fun calculate(answer: Int, rightIndex: Int) {
-        if (answer + 1 == rightIndex) {
+    private fun calculateRt145(answerRt145: Int, rightIndex: Int) {
+        if (answerRt145 + 1 == rightIndex) {
             _state.value.copy(
                 countGood =  _state.value.countGood + 1,
                 countTasks = _state.value.countTasks + 1
             )
-                .updateStateUI()
+                .updateStateUIRt145()
         } else {
             _state.value.copy(
                 countTasks = _state.value.countTasks + 1
             )
-                .updateStateUI()
+                .updateStateUIRt145()
         }
-        if (_state.value.countTasks > _state.value.tasks.size) {
+        if (_state.value.countTasks > _state.value.tasksRt145.size) {
             _state.value.copy(
                 screenStateRt145 = ScreenStateRt145.ResulQuizState
             )
-                .updateStateUI()
+                .updateStateUIRt145()
         }
     }
 
 
-    private fun MainStateRt145.updateStateUI() {
+    private fun MainStateRt145.updateStateUIRt145() {
         _state.update {
             this
         }

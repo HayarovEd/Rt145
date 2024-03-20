@@ -40,10 +40,10 @@ import one.win.casino.rt145.domain.model.QuizTaskRt145
 import one.win.casino.rt145.ui.state.MainEventRt145
 import one.win.casino.rt145.ui.state.ScreenStateRt145
 import one.win.casino.rt145.ui.state.SelectorQuizRt145
-import one.win.casino.rt145.ui.theme.black
-import one.win.casino.rt145.ui.theme.grey
-import one.win.casino.rt145.ui.theme.red
-import one.win.casino.rt145.ui.theme.white
+import one.win.casino.rt145.ui.theme.blackRt145
+import one.win.casino.rt145.ui.theme.greyRt145
+import one.win.casino.rt145.ui.theme.redRt145
+import one.win.casino.rt145.ui.theme.whiteRt145
 
 @Composable
 fun QuizScreenRt145(
@@ -73,7 +73,7 @@ fun QuizScreenRt145(
             Box(
                 modifier = modifier
                     .fillMaxWidth()
-                    .background(color = white)
+                    .background(color = whiteRt145)
             ) {
                 Text(
                     modifier = modifier
@@ -84,7 +84,7 @@ fun QuizScreenRt145(
                         fontSize = 20.sp,
                         fontWeight = FontWeight(600),
                         textAlign = TextAlign.Center,
-                        color = black
+                        color = blackRt145
                     )
                 )
                 IconButton(
@@ -96,7 +96,7 @@ fun QuizScreenRt145(
                     Icon(
                         imageVector = ImageVector.vectorResource(id = R.drawable.baseline_arrow_back_ios_new_24),
                         contentDescription = "",
-                        tint = black
+                        tint = blackRt145
                     )
                 }
             }
@@ -107,7 +107,7 @@ fun QuizScreenRt145(
             modifier = modifier
                 .padding(paddings)
                 .fillMaxSize()
-                .background(color = white)
+                .background(color = whiteRt145)
                 .padding(horizontal = 15.dp)
         ) {
             Column(
@@ -127,7 +127,7 @@ fun QuizScreenRt145(
                             fontSize = 14.sp,
                             fontWeight = FontWeight(500),
                             textAlign = TextAlign.Center,
-                            color = black,
+                            color = blackRt145,
                         )
                     )
                     Spacer(modifier = modifier.width(15.dp))
@@ -137,7 +137,7 @@ fun QuizScreenRt145(
                             fontSize = 14.sp,
                             fontWeight = FontWeight(500),
                             textAlign = TextAlign.Center,
-                            color = black,
+                            color = blackRt145,
                         )
                     )
                 }
@@ -153,8 +153,8 @@ fun QuizScreenRt145(
                         {
                             RadioButton(
                                 colors = RadioButtonDefaults.colors(
-                                    selectedColor = grey,
-                                    unselectedColor = grey
+                                    selectedColor = greyRt145,
+                                    unselectedColor = greyRt145
                                 ),
                                 selected = (it == selectedOption),
                                 onClick = { onOptionSelected(it) }
@@ -165,7 +165,7 @@ fun QuizScreenRt145(
                                     fontSize = 14.sp,
                                     fontWeight = FontWeight(500),
                                     textAlign = TextAlign.Center,
-                                    color = black,
+                                    color = blackRt145,
                                 )
                             )
                         }
@@ -180,7 +180,7 @@ fun QuizScreenRt145(
                     .fillMaxWidth(),
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = red
+                    containerColor = redRt145
                 ),
                 contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
@@ -198,7 +198,7 @@ fun QuizScreenRt145(
                         fontSize = 20.sp,
                         fontWeight = FontWeight(600),
                         textAlign = TextAlign.Center,
-                        color = white
+                        color = whiteRt145
                     )
                 )
             }

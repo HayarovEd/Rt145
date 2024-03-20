@@ -15,7 +15,7 @@ abstract class DiModuleRt145 {
 
     @Binds
     @Singleton
-    abstract fun bindRepository(repositoryRt145: RemoteRepositoryRt145Impl): RemoteRepositoryRt145
+    abstract fun bindRepositoryRt145(repositoryRt145: RemoteRepositoryRt145Impl): RemoteRepositoryRt145
 
 
 }

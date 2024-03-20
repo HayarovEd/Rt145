@@ -28,8 +28,8 @@ import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
 import one.win.casino.rt145.ui.state.MainEventRt145
 import one.win.casino.rt145.ui.state.ScreenStateRt145
-import one.win.casino.rt145.ui.theme.red
-import one.win.casino.rt145.ui.theme.white
+import one.win.casino.rt145.ui.theme.redRt145
+import one.win.casino.rt145.ui.theme.whiteRt145
 import one.win.casino.rt145.ui.uikit.Banner
 
 
@@ -66,7 +66,7 @@ fun EnterScreen(
             Button(
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = red
+                    containerColor = redRt145
                 ),
                 contentPadding = PaddingValues(
                     horizontal = 45.dp, vertical = 12.dp
@@ -81,7 +81,7 @@ fun EnterScreen(
                         fontSize = 36.sp,
                         fontWeight = FontWeight(700),
                         textAlign = TextAlign.Center,
-                        color = white
+                        color = whiteRt145
                     )
                 )
             }
@@ -92,7 +92,7 @@ fun EnterScreen(
                 .align(alignment = Alignment.BottomCenter),
             shape = RoundedCornerShape(12.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = white
+                containerColor = whiteRt145
             ),
             contentPadding = PaddingValues(
                 horizontal = 45.dp, vertical = 12.dp
@@ -107,7 +107,7 @@ fun EnterScreen(
                     fontSize = 20.sp,
                     fontWeight = FontWeight(600),
                     textAlign = TextAlign.Center,
-                    color = red
+                    color = redRt145
                 )
             )
         }

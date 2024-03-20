@@ -15,7 +15,7 @@ const val URL_ANALYTICS = "https://allsportsapi2.p.rapidapi.com/api/"
 object ApiModuleRt145 {
     @Provides
     @Singleton
-    fun provideApi(): ApiRt145 {
+    fun provideApiRt145(): ApiRt145 {
         return Retrofit.Builder()
             .baseUrl(URL_ANALYTICS)
             .addConverterFactory(GsonConverterFactory.create())

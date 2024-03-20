@@ -37,9 +37,9 @@ import one.win.casino.rt145.R
 import one.win.casino.rt145.ui.state.MainEventRt145
 import one.win.casino.rt145.ui.state.ScreenStateRt145
 import one.win.casino.rt145.ui.state.SelectorQuizRt145
-import one.win.casino.rt145.ui.theme.black
-import one.win.casino.rt145.ui.theme.red
-import one.win.casino.rt145.ui.theme.white
+import one.win.casino.rt145.ui.theme.blackRt145
+import one.win.casino.rt145.ui.theme.redRt145
+import one.win.casino.rt145.ui.theme.whiteRt145
 
 
 @Composable
@@ -58,7 +58,7 @@ fun SelectQuizScreen(
             Box(
                 modifier = modifier
                     .fillMaxWidth()
-                    .background(color = white)
+                    .background(color = whiteRt145)
             ) {
                 Text(
                     modifier = modifier
@@ -69,7 +69,7 @@ fun SelectQuizScreen(
                         fontSize = 20.sp,
                         fontWeight = FontWeight(600),
                         textAlign = TextAlign.Center,
-                        color = black
+                        color = blackRt145
                     )
                 )
                 IconButton(
@@ -81,7 +81,7 @@ fun SelectQuizScreen(
                     Icon(
                         imageVector = ImageVector.vectorResource(id = R.drawable.baseline_arrow_back_ios_new_24),
                         contentDescription = "",
-                        tint = black
+                        tint = blackRt145
                     )
                 }
             }
@@ -92,7 +92,7 @@ fun SelectQuizScreen(
             modifier = modifier
                 .padding(paddings)
                 .fillMaxSize()
-                .background(color = white)
+                .background(color = whiteRt145)
                 .padding(horizontal = 15.dp)
         ) {
             Column(
@@ -110,7 +110,7 @@ fun SelectQuizScreen(
                         ),
                         shape = RoundedCornerShape(8.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = white,
+                            containerColor = whiteRt145,
                         ),
                         onClick = {
                             onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.FOOTBALL_QUIZ))
@@ -121,7 +121,7 @@ fun SelectQuizScreen(
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight(500),
                                 textAlign = TextAlign.Center,
-                                color = if (selectorQuizRt145 == SelectorQuizRt145.FOOTBALL_QUIZ) red else black,
+                                color = if (selectorQuizRt145 == SelectorQuizRt145.FOOTBALL_QUIZ) redRt145 else blackRt145,
                             )
                         )
                     }
@@ -132,7 +132,7 @@ fun SelectQuizScreen(
                             defaultElevation = if (selectorQuizRt145 == SelectorQuizRt145.BASKETBALL_QUIZ) 10.dp else 2.dp,
                         ),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = white
+                            containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
                         onClick = {
@@ -144,7 +144,7 @@ fun SelectQuizScreen(
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight(500),
                                 textAlign = TextAlign.Center,
-                                color = if (selectorQuizRt145 == SelectorQuizRt145.BASKETBALL_QUIZ) red else black,
+                                color = if (selectorQuizRt145 == SelectorQuizRt145.BASKETBALL_QUIZ) redRt145 else blackRt145,
                             )
                         )
                     }
@@ -155,7 +155,7 @@ fun SelectQuizScreen(
                             defaultElevation = if (selectorQuizRt145 == SelectorQuizRt145.HOCKEY_QUIZ) 10.dp else 2.dp,
                         ),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = white
+                            containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
                         onClick = {
@@ -167,7 +167,7 @@ fun SelectQuizScreen(
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight(500),
                                 textAlign = TextAlign.Center,
-                                color = if (selectorQuizRt145 == SelectorQuizRt145.HOCKEY_QUIZ) red else black,
+                                color = if (selectorQuizRt145 == SelectorQuizRt145.HOCKEY_QUIZ) redRt145 else blackRt145,
                             )
                         )
                     }
@@ -184,7 +184,7 @@ fun SelectQuizScreen(
                             defaultElevation = if (selectorQuizRt145 == SelectorQuizRt145.VOLLEYBALL_QUIZ) 10.dp else 2.dp,
                         ),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = white
+                            containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
                         onClick = {
@@ -196,7 +196,7 @@ fun SelectQuizScreen(
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight(500),
                                 textAlign = TextAlign.Center,
-                                color = if (selectorQuizRt145 == SelectorQuizRt145.VOLLEYBALL_QUIZ) red else black,
+                                color = if (selectorQuizRt145 == SelectorQuizRt145.VOLLEYBALL_QUIZ) redRt145 else blackRt145,
                             )
                         )
                     }
@@ -207,7 +207,7 @@ fun SelectQuizScreen(
                             defaultElevation = if (selectorQuizRt145 == SelectorQuizRt145.TENNIS_QUIZ) 10.dp else 2.dp,
                         ),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = white
+                            containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
                         onClick = {
@@ -219,7 +219,7 @@ fun SelectQuizScreen(
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight(500),
                                 textAlign = TextAlign.Center,
-                                color = if (selectorQuizRt145 == SelectorQuizRt145.TENNIS_QUIZ) red else black,
+                                color = if (selectorQuizRt145 == SelectorQuizRt145.TENNIS_QUIZ) redRt145 else blackRt145,
                             )
                         )
                     }
@@ -230,7 +230,7 @@ fun SelectQuizScreen(
                             defaultElevation = if (selectorQuizRt145 == SelectorQuizRt145.BOXING_QUIZ) 10.dp else 2.dp,
                         ),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = white
+                            containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
                         onClick = {
@@ -242,7 +242,7 @@ fun SelectQuizScreen(
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight(500),
                                 textAlign = TextAlign.Center,
-                                color = if (selectorQuizRt145 == SelectorQuizRt145.BOXING_QUIZ) red else black,
+                                color = if (selectorQuizRt145 == SelectorQuizRt145.BOXING_QUIZ) redRt145 else blackRt145,
                             )
                         )
                     }
@@ -283,7 +283,7 @@ fun SelectQuizScreen(
                         fontSize = 20.sp,
                         fontWeight = FontWeight(600),
                         textAlign = TextAlign.Center,
-                        color = black,
+                        color = blackRt145,
                     )
                 )
                 Spacer(modifier = modifier.height(10.dp))
@@ -297,14 +297,14 @@ fun SelectQuizScreen(
                         fontSize = 14.sp,
                         fontWeight = FontWeight(500),
                         textAlign = TextAlign.Center,
-                        color = black,
+                        color = blackRt145,
                     )
                 )
                 Spacer(modifier = modifier.height(25.dp))
                 Button(
                     shape = RoundedCornerShape(12.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = red
+                        containerColor = redRt145
                     ),
                     contentPadding = PaddingValues(
                         horizontal = 45.dp, vertical = 12.dp
@@ -319,7 +319,7 @@ fun SelectQuizScreen(
                             fontSize = 20.sp,
                             fontWeight = FontWeight(600),
                             textAlign = TextAlign.Center,
-                            color = white
+                            color = whiteRt145
                         )
                     )
                 }

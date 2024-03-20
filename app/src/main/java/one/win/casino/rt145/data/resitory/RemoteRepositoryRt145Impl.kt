@@ -11,16 +11,16 @@ import one.win.casino.rt145.data.mapper.toFootballRt145
 import one.win.casino.rt145.data.remote.ApiRt145
 import one.win.casino.rt145.domain.model.GameDataRt145
 import one.win.casino.rt145.domain.repository.RemoteRepositoryRt145
-import one.win.casino.rt145.domain.utils.ANDROID_API_KEY
-import one.win.casino.rt145.domain.utils.APPLICATION_ID
-import one.win.casino.rt145.domain.utils.BACK_URL
-import one.win.casino.rt145.domain.utils.NAME
-import one.win.casino.rt145.domain.utils.OBJECT_ID_KEY
-import one.win.casino.rt145.domain.utils.POLITIC_URL
+import one.win.casino.rt145.domain.utils.ANDROID_API_KEY_RT_145
+import one.win.casino.rt145.domain.utils.APPLICATION_ID_RT_145
+import one.win.casino.rt145.domain.utils.BACK_URL_RT_145
+import one.win.casino.rt145.domain.utils.NAME_RT_145
+import one.win.casino.rt145.domain.utils.OBJECT_ID_KEY_RT_145
 import one.win.casino.rt145.domain.utils.ResourceRt145
-import one.win.casino.rt145.domain.utils.SHARED_DATA
-import one.win.casino.rt145.domain.utils.SHARED_URL
-import one.win.casino.rt145.domain.utils.TABLE_NAME
+import one.win.casino.rt145.domain.utils.SHARED_DATA_RT_145
+import one.win.casino.rt145.domain.utils.SHARED_URL_RT_145
+import one.win.casino.rt145.domain.utils.TABLE_NAME_RT_145
+import one.win.casino.rt145.domain.utils.UNKNOWN_ERROR_RT_145
 import javax.inject.Inject
 
 class RemoteRepositoryRt145Impl @Inject constructor(
@@ -29,7 +29,7 @@ class RemoteRepositoryRt145Impl @Inject constructor(
 ) : RemoteRepositoryRt145 {
 
     private val sharedPrefRt137 =
-        application.getSharedPreferences(SHARED_DATA, Context.MODE_PRIVATE)
+        application.getSharedPreferences(SHARED_DATA_RT_145, Context.MODE_PRIVATE)
 
     override suspend fun getFootballData(): ResourceRt145<List<GameDataRt145>> {
         return try {
@@ -39,7 +39,7 @@ class RemoteRepositoryRt145Impl @Inject constructor(
             )
         } catch (e: Exception) {
             e.printStackTrace()
-            ResourceRt145.Error(e.message ?: "An unknown error")
+            ResourceRt145.Error(e.message ?: UNKNOWN_ERROR_RT_145)
         }
     }
 
@@ -51,7 +51,7 @@ class RemoteRepositoryRt145Impl @Inject constructor(
             )
         } catch (e: Exception) {
             e.printStackTrace()
-            ResourceRt145.Error(e.message ?: "An unknown error")
+            ResourceRt145.Error(e.message ?: UNKNOWN_ERROR_RT_145)
         }
     }
 
@@ -63,17 +63,17 @@ class RemoteRepositoryRt145Impl @Inject constructor(
             )
         } catch (e: Exception) {
             e.printStackTrace()
-            ResourceRt145.Error(e.message ?: "An unknown error")
+            ResourceRt145.Error(e.message ?: UNKNOWN_ERROR_RT_145)
         }
     }
 
-    override suspend fun getUrl(): ResourceRt145<String> {
+    override suspend fun getUrlRt145(): ResourceRt145<String> {
         return try {
             withContext(Dispatchers.IO)
             {
-                Backendless.setUrl(BACK_URL)
-                Backendless.initApp(application, APPLICATION_ID, ANDROID_API_KEY)
-                val result = Backendless.Data.of(TABLE_NAME).findById(OBJECT_ID_KEY)[NAME]
+                Backendless.setUrl(BACK_URL_RT_145)
+                Backendless.initApp(application, APPLICATION_ID_RT_145, ANDROID_API_KEY_RT_145)
+                val result = Backendless.Data.of(TABLE_NAME_RT_145).findById(OBJECT_ID_KEY_RT_145)[NAME_RT_145]
                 if (result != null) {
                     try {
                         val client = OkHttpClient()
@@ -90,7 +90,7 @@ class RemoteRepositoryRt145Impl @Inject constructor(
                         }
                     } catch (e: Exception) {
                         e.printStackTrace()
-                        ResourceRt145.Error(e.message ?: "An unknown error")
+                        ResourceRt145.Error(e.message ?: UNKNOWN_ERROR_RT_145)
                     }
                 } else {
                     ResourceRt145.Error("empty data")
@@ -98,12 +98,12 @@ class RemoteRepositoryRt145Impl @Inject constructor(
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            ResourceRt145.Error(e.message ?: "An unknown error")
+            ResourceRt145.Error(e.message ?: UNKNOWN_ERROR_RT_145)
         }
     }
 
-    override suspend fun getSharedUrl(): String? = sharedPrefRt137.getString(SHARED_URL, "")
+    override suspend fun getSharedUrlRt145(): String? = sharedPrefRt137.getString(SHARED_URL_RT_145, "")
 
-    override suspend fun setSharedUrl(date: String) =
-        sharedPrefRt137.edit().putString(SHARED_URL, date).apply()
+    override suspend fun setSharedUrlRt145(date: String) =
+        sharedPrefRt137.edit().putString(SHARED_URL_RT_145, date).apply()
 }

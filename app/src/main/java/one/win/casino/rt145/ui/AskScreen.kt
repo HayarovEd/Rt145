@@ -28,8 +28,8 @@ import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
 import one.win.casino.rt145.ui.state.MainEventRt145
 import one.win.casino.rt145.ui.state.ScreenStateRt145
-import one.win.casino.rt145.ui.theme.red
-import one.win.casino.rt145.ui.theme.white
+import one.win.casino.rt145.ui.theme.redRt145
+import one.win.casino.rt145.ui.theme.whiteRt145
 
 @Composable
 fun AskScreen(
@@ -60,7 +60,7 @@ fun AskScreen(
                     fontSize = 20.sp,
                     fontWeight = FontWeight(600),
                     textAlign = TextAlign.Center,
-                    color = white
+                    color = whiteRt145
                 )
             )
             Spacer(modifier = modifier.height(40.dp))
@@ -70,7 +70,7 @@ fun AskScreen(
                     .fillMaxWidth(),
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = red
+                    containerColor = redRt145
                 ),
                 contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
@@ -83,7 +83,7 @@ fun AskScreen(
                         fontSize = 20.sp,
                         fontWeight = FontWeight(600),
                         textAlign = TextAlign.Center,
-                        color = white
+                        color = whiteRt145
                     )
                 )
             }
@@ -94,7 +94,7 @@ fun AskScreen(
                     .fillMaxWidth(),
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = white
+                    containerColor = whiteRt145
                 ),
                 contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
@@ -107,7 +107,7 @@ fun AskScreen(
                         fontSize = 20.sp,
                         fontWeight = FontWeight(600),
                         textAlign = TextAlign.Center,
-                        color = red
+                        color = redRt145
                     )
                 )
             }

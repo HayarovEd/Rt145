@@ -29,16 +29,15 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
 import one.win.casino.rt145.ui.state.MainEventRt145
 import one.win.casino.rt145.ui.state.ScreenStateRt145
 import one.win.casino.rt145.ui.state.SelectorQuizRt145
-import one.win.casino.rt145.ui.theme.black
-import one.win.casino.rt145.ui.theme.red
-import one.win.casino.rt145.ui.theme.white
+import one.win.casino.rt145.ui.theme.blackRt145
+import one.win.casino.rt145.ui.theme.redRt145
+import one.win.casino.rt145.ui.theme.whiteRt145
 
 
 @Composable
@@ -62,7 +61,7 @@ fun ResultScreenRt145(
     } else {
         painterResource(id = R.drawable.bad)
     }
-    val title = if (countGood >= size / 2) {
+    val titleRt145 = if (countGood >= size / 2) {
         stringResource(id = R.string.good)
     } else {
         stringResource(id = R.string.bad)
@@ -76,7 +75,7 @@ fun ResultScreenRt145(
             Box(
                 modifier = modifier
                     .fillMaxWidth()
-                    .background(color = white)
+                    .background(color = whiteRt145)
             ) {
                 Text(
                     modifier = modifier
@@ -87,7 +86,7 @@ fun ResultScreenRt145(
                         fontSize = 20.sp,
                         fontWeight = FontWeight(600),
                         textAlign = TextAlign.Center,
-                        color = black
+                        color = blackRt145
                     )
                 )
                 IconButton(
@@ -99,7 +98,7 @@ fun ResultScreenRt145(
                     Icon(
                         imageVector = ImageVector.vectorResource(id = R.drawable.baseline_arrow_back_ios_new_24),
                         contentDescription = "",
-                        tint = black
+                        tint = blackRt145
                     )
                 }
             }
@@ -110,7 +109,7 @@ fun ResultScreenRt145(
             modifier = modifier
                 .padding(paddings)
                 .fillMaxSize()
-                .background(color = white)
+                .background(color = whiteRt145)
                 .padding(horizontal = 15.dp)
         ) {
             Column(
@@ -139,7 +138,7 @@ fun ResultScreenRt145(
                             fontSize = 78.sp,
                             fontWeight = FontWeight(700),
                             textAlign = TextAlign.Center,
-                            color = white
+                            color = whiteRt145
                         )
                     )
                 }
@@ -147,12 +146,12 @@ fun ResultScreenRt145(
                 Text(
                     modifier = modifier
                         .fillMaxWidth(),
-                    text = title,
+                    text = titleRt145,
                     style = TextStyle(
                         fontSize = 18.sp,
                         fontWeight = FontWeight(600),
                         textAlign = TextAlign.Center,
-                        color = black
+                        color = blackRt145
                     )
                 )
             }
@@ -163,7 +162,7 @@ fun ResultScreenRt145(
                     .fillMaxWidth(),
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = red
+                    containerColor = redRt145
                 ),
                 contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
@@ -176,7 +175,7 @@ fun ResultScreenRt145(
                         fontSize = 20.sp,
                         fontWeight = FontWeight(600),
                         textAlign = TextAlign.Center,
-                        color = white
+                        color = whiteRt145
                     )
                 )
             }

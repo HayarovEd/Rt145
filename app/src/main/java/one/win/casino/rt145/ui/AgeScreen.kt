@@ -41,8 +41,8 @@ import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
 import one.win.casino.rt145.ui.state.MainEventRt145
 import one.win.casino.rt145.ui.state.ScreenStateRt145
-import one.win.casino.rt145.ui.theme.red
-import one.win.casino.rt145.ui.theme.white
+import one.win.casino.rt145.ui.theme.redRt145
+import one.win.casino.rt145.ui.theme.whiteRt145
 
 @Composable
 fun AgeScreen(
@@ -60,7 +60,7 @@ fun AgeScreen(
             style = SpanStyle(
                 fontWeight = FontWeight(500),
                 fontSize = 14.sp,
-                color = white,
+                color = whiteRt145,
             )
         ) {
             append(stringResource(id = R.string.as_change_age))
@@ -73,7 +73,7 @@ fun AgeScreen(
             style = SpanStyle(
                 fontWeight = FontWeight(800),
                 fontSize = 14.sp,
-                color = white
+                color = whiteRt145
             )
         ) {
             append(stringResource(id = R.string.as_exit))
@@ -84,7 +84,7 @@ fun AgeScreen(
             style = SpanStyle(
                 fontWeight = FontWeight(500),
                 fontSize = 14.sp,
-                color = white
+                color = whiteRt145
             )
         ) {
             append(stringResource(id = R.string.as_from_app))
@@ -111,7 +111,7 @@ fun AgeScreen(
                     fontSize = 20.sp,
                     fontWeight = FontWeight(400),
                     textAlign = TextAlign.Center,
-                    color = white
+                    color = whiteRt145
                 )
             )
             Spacer(modifier = modifier.height(70.dp))
@@ -169,7 +169,7 @@ fun AgeScreen(
                         fontSize = 14.sp,
                         fontWeight = FontWeight(500),
                         textAlign = TextAlign.Center,
-                        color = white
+                        color = whiteRt145
                     )
                 )
                 Spacer(modifier = modifier.height(15.dp))
@@ -189,7 +189,7 @@ fun AgeScreen(
             Button(
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = white
+                    containerColor = whiteRt145
                 ),
                 contentPadding = PaddingValues(
                     horizontal = 45.dp, vertical = 12.dp
@@ -205,7 +205,7 @@ fun AgeScreen(
                         fontSize = 20.sp,
                         fontWeight = FontWeight(600),
                         textAlign = TextAlign.Center,
-                        color = red
+                        color = redRt145
                     )
                 )
             }
@@ -229,7 +229,7 @@ private fun ItemAge(
                 fontSize = 14.sp,
                 fontWeight = FontWeight(500),
                 textAlign = TextAlign.Center,
-                color = white
+                color = whiteRt145
             )
         )
         Spacer(modifier = modifier.height(17.dp))
@@ -239,7 +239,7 @@ private fun ItemAge(
             Icon(
                 imageVector = ImageVector.vectorResource(id = R.drawable.baseline_arrow_drop_up_16),
                 contentDescription = "",
-                tint = white
+                tint = whiteRt145
             )
         }
         Spacer(modifier = modifier.height(17.dp))
@@ -249,7 +249,7 @@ private fun ItemAge(
                 fontSize = 35.sp,
                 fontWeight = FontWeight(700),
                 textAlign = TextAlign.Center,
-                color = white
+                color = whiteRt145
             )
         )
         Spacer(modifier = modifier.height(17.dp))
@@ -259,7 +259,7 @@ private fun ItemAge(
             Icon(
                 imageVector = ImageVector.vectorResource(id = R.drawable.baseline_arrow_drop_down_16),
                 contentDescription = "",
-                tint = white
+                tint = whiteRt145
             )
         }
     }

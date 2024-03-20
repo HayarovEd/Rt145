@@ -10,29 +10,29 @@ import one.win.casino.rt145.ui.state.ScreenStateRt145
 fun BaseSceneRt145(
     viewModel: MainViewModelRt145 = hiltViewModel()
 ) {
-    val state = viewModel.state.collectAsState()
-    val event = viewModel::onEvent
+    val stateRt145 = viewModel.state.collectAsState()
+    val eventRt145 = viewModel::onEvent
 
-    when (state.value.screenStateRt145) {
+    when (stateRt145.value.screenStateRt145) {
         ScreenStateRt145.AgeState -> {
-            AgeScreen(onEvent = event)
+            AgeScreen(onEvent = eventRt145)
         }
 
         ScreenStateRt145.AskState -> {
-            AskScreen(onEvent = event)
+            AskScreen(onEvent = eventRt145)
         }
 
         ScreenStateRt145.EnterState -> {
-            EnterScreen(onEvent = event)
+            EnterScreen(onEvent = eventRt145)
         }
 
         ScreenStateRt145.QuizState -> {
             QuizScreenRt145(
-                selectorQuizRt145 = state.value.selectorQuizRt145,
-                quizTaskRt145 = state.value.tasks[state.value.countTasks - 1],
-                number = state.value.countTasks,
-                size = state.value.tasks.size,
-                onEvent = event
+                selectorQuizRt145 = stateRt145.value.selectorQuizRt145,
+                quizTaskRt145 = stateRt145.value.tasksRt145[stateRt145.value.countTasks - 1],
+                number = stateRt145.value.countTasks,
+                size = stateRt145.value.tasksRt145.size,
+                onEvent = eventRt145
             )
         }
 
@@ -42,18 +42,18 @@ fun BaseSceneRt145(
 
         ScreenStateRt145.ResulQuizState -> {
             ResultScreenRt145(
-                selectorQuizRt145 = state.value.selectorQuizRt145,
-                size = state.value.tasks.size,
-                countGood = state.value.countGood,
-                onEvent = event
+                selectorQuizRt145 = stateRt145.value.selectorQuizRt145,
+                size = stateRt145.value.tasksRt145.size,
+                countGood = stateRt145.value.countGood,
+                onEvent = eventRt145
             )
         }
 
         ScreenStateRt145.SelectQuizState -> {
             SelectQuizScreen(
-                selectorQuizRt145 = state.value.selectorQuizRt145,
-                size = state.value.tasks.size,
-                onEvent = event
+                selectorQuizRt145 = stateRt145.value.selectorQuizRt145,
+                size = stateRt145.value.tasksRt145.size,
+                onEvent = eventRt145
             )
         }
 
