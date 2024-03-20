@@ -31,24 +31,26 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
+import one.win.casino.rt145.ui.state.MainEventRt145
+import one.win.casino.rt145.ui.state.ScreenStateRt145
 import one.win.casino.rt145.ui.state.SelectorQuizRt145
 import one.win.casino.rt145.ui.theme.black
 import one.win.casino.rt145.ui.theme.red
 import one.win.casino.rt145.ui.theme.white
 
-@Preview
+
 @Composable
 fun SelectQuizScreen(
     modifier: Modifier = Modifier,
-    selectorQuizRt145: SelectorQuizRt145 = SelectorQuizRt145.BASKETBALL_QUIZ,
-    size: Int = 10,
+    selectorQuizRt145: SelectorQuizRt145,
+    size: Int,
+    onEvent: (MainEventRt145) -> Unit
 ) {
     BackHandler {
-        ///////
+        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.AskState))
     }
     Scaffold(
         modifier = modifier,
@@ -73,7 +75,7 @@ fun SelectQuizScreen(
                 IconButton(
                     modifier = modifier.align(alignment = Alignment.CenterStart),
                     onClick = {
-                        ////////
+                        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.AskState))
                     }
                 ) {
                     Icon(
@@ -111,7 +113,7 @@ fun SelectQuizScreen(
                             containerColor = white,
                         ),
                         onClick = {
-                            //////////
+                            onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.FOOTBALL_QUIZ))
                         }) {
                         Text(
                             text = stringResource(id = R.string.football),
@@ -134,7 +136,7 @@ fun SelectQuizScreen(
                         ),
                         shape = RoundedCornerShape(8.dp),
                         onClick = {
-                            //////////
+                            onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.BASKETBALL_QUIZ))
                         }) {
                         Text(
                             text = stringResource(id = R.string.basketball),
@@ -157,7 +159,7 @@ fun SelectQuizScreen(
                         ),
                         shape = RoundedCornerShape(8.dp),
                         onClick = {
-                            //////////
+                            onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.HOCKEY_QUIZ))
                         }) {
                         Text(
                             text = stringResource(id = R.string.hockey),
@@ -186,7 +188,7 @@ fun SelectQuizScreen(
                         ),
                         shape = RoundedCornerShape(8.dp),
                         onClick = {
-                            //////////
+                            onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.VOLLEYBALL_QUIZ))
                         }) {
                         Text(
                             text = stringResource(id = R.string.volleyball),
@@ -209,7 +211,7 @@ fun SelectQuizScreen(
                         ),
                         shape = RoundedCornerShape(8.dp),
                         onClick = {
-                            //////////
+                            onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.TENNIS_QUIZ))
                         }) {
                         Text(
                             text = stringResource(id = R.string.tennis),
@@ -232,7 +234,7 @@ fun SelectQuizScreen(
                         ),
                         shape = RoundedCornerShape(8.dp),
                         onClick = {
-                            //////////
+                            onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.BOXING_QUIZ))
                         }) {
                         Text(
                             text = stringResource(id = R.string.boxing),
@@ -308,7 +310,7 @@ fun SelectQuizScreen(
                         horizontal = 45.dp, vertical = 12.dp
                     ),
                     onClick = {
-                        //////////////
+                        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.QuizState))
                     }
                 ) {
                     Text(

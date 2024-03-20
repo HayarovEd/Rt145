@@ -33,18 +33,21 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
+import one.win.casino.rt145.ui.state.MainEventRt145
+import one.win.casino.rt145.ui.state.ScreenStateRt145
 import one.win.casino.rt145.ui.state.SelectorQuizRt145
 import one.win.casino.rt145.ui.theme.black
 import one.win.casino.rt145.ui.theme.red
 import one.win.casino.rt145.ui.theme.white
 
-@Preview
+
 @Composable
 fun ResultScreenRt145(
     modifier: Modifier = Modifier,
-    selectorQuizRt145: SelectorQuizRt145 = SelectorQuizRt145.FOOTBALL_QUIZ,
-    size: Int = 10,
-    countGood: Int = 10,
+    selectorQuizRt145: SelectorQuizRt145,
+    size: Int,
+    countGood: Int,
+    onEvent: (MainEventRt145) -> Unit
 ) {
     val category = when (selectorQuizRt145) {
         SelectorQuizRt145.FOOTBALL_QUIZ -> stringResource(id = R.string.football)
@@ -65,7 +68,7 @@ fun ResultScreenRt145(
         stringResource(id = R.string.bad)
     }
     BackHandler {
-        ///////
+        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.EnterState))
     }
     Scaffold(
         modifier = modifier,
@@ -90,7 +93,7 @@ fun ResultScreenRt145(
                 IconButton(
                     modifier = modifier.align(alignment = Alignment.CenterStart),
                     onClick = {
-                        ////////
+                        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.EnterState))
                     }
                 ) {
                     Icon(
@@ -164,7 +167,7 @@ fun ResultScreenRt145(
                 ),
                 contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
-                    //////////////
+                    onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.RemoteCategoryState))
                 }
             ) {
                 Text(

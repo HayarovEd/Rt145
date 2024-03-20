@@ -39,12 +39,15 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
+import one.win.casino.rt145.ui.state.MainEventRt145
+import one.win.casino.rt145.ui.state.ScreenStateRt145
 import one.win.casino.rt145.ui.theme.red
 import one.win.casino.rt145.ui.theme.white
 
 @Composable
 fun AgeScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onEvent: (MainEventRt145) -> Unit
 ) {
     BackHandler {}
     val day = remember { mutableIntStateOf(1) }
@@ -191,8 +194,9 @@ fun AgeScreen(
                 contentPadding = PaddingValues(
                     horizontal = 45.dp, vertical = 12.dp
                 ),
+                enabled = year.intValue > 2006,
                 onClick = {
-                    //////////////
+                    onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.EnterState))
                 }
             ) {
                 Text(

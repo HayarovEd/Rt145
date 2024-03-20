@@ -33,26 +33,26 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
 import one.win.casino.rt145.domain.model.QuizTaskRt145
-import one.win.casino.rt145.domain.model.quizFootball
+import one.win.casino.rt145.ui.state.MainEventRt145
+import one.win.casino.rt145.ui.state.ScreenStateRt145
 import one.win.casino.rt145.ui.state.SelectorQuizRt145
 import one.win.casino.rt145.ui.theme.black
 import one.win.casino.rt145.ui.theme.grey
 import one.win.casino.rt145.ui.theme.red
 import one.win.casino.rt145.ui.theme.white
 
-@Preview
 @Composable
 fun QuizScreenRt145(
     modifier: Modifier = Modifier,
-    selectorQuizRt145: SelectorQuizRt145 = SelectorQuizRt145.FOOTBALL_QUIZ,
-    size: Int = 10,
-    number: Int = 1,
-    quizTaskRt145: QuizTaskRt145 = quizFootball[0]
+    selectorQuizRt145: SelectorQuizRt145,
+    size: Int,
+    number: Int,
+    quizTaskRt145: QuizTaskRt145,
+    onEvent: (MainEventRt145) -> Unit
 ) {
     val category = when (selectorQuizRt145) {
         SelectorQuizRt145.FOOTBALL_QUIZ -> stringResource(id = R.string.football)
@@ -64,7 +64,7 @@ fun QuizScreenRt145(
     }
     val (selectedOption, onOptionSelected) = remember { mutableIntStateOf(quizTaskRt145.answers[0]) }
     BackHandler {
-        ///////
+        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.SelectQuizState))
     }
     Scaffold(
         modifier = modifier,
@@ -89,7 +89,7 @@ fun QuizScreenRt145(
                 IconButton(
                     modifier = modifier.align(alignment = Alignment.CenterStart),
                     onClick = {
-                        ////////
+                        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.SelectQuizState))
                     }
                 ) {
                     Icon(
@@ -182,7 +182,12 @@ fun QuizScreenRt145(
                 ),
                 contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
-                    //////////////
+                    onEvent(
+                        MainEventRt145.OnAnswer(
+                            answer = selectedOption,
+                            rightIndex = quizTaskRt145.correctAnswerNum
+                        )
+                    )
                 }
             ) {
                 Text(

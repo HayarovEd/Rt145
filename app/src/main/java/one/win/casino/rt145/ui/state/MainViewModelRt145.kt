@@ -112,7 +112,13 @@ class MainViewModelRt145 @Inject constructor(
 
     fun onEvent(event: MainEventRt145) {
         when (event) {
-            is MainEventRt145.OnAnswer -> TODO()
+            is MainEventRt145.OnAnswer -> {
+                calculate(
+                    answer = event.answer,
+                    rightIndex = event.rightIndex
+                )
+            }
+
             is MainEventRt145.OnSetScreenState -> {
                 _state.value.copy(
                     screenStateRt145 = event.screenStateRt145
@@ -120,13 +126,15 @@ class MainViewModelRt145 @Inject constructor(
                     .updateStateUI()
                 if (event.screenStateRt145 == ScreenStateRt145.EnterState) {
                     _state.value.copy(
-                        countGood = 0
+                        countGood = 0,
+                        countTasks = 1
                     )
                         .updateStateUI()
                 }
             }
+
             is MainEventRt145.OnSetTypeQuizState -> {
-                val currentTasks = when(event.selectorQuizRt145) {
+                val currentTasks = when (event.selectorQuizRt145) {
                     SelectorQuizRt145.FOOTBALL_QUIZ -> quizFootball.shuffled()
                     SelectorQuizRt145.BASKETBALL_QUIZ -> quizBasketball.shuffled()
                     SelectorQuizRt145.HOCKEY_QUIZ -> quizHokkey.shuffled()
@@ -143,6 +151,26 @@ class MainViewModelRt145 @Inject constructor(
         }
     }
 
+    private fun calculate(answer: Int, rightIndex: Int) {
+        if (answer + 1 == rightIndex) {
+            _state.value.copy(
+                countGood =  _state.value.countGood + 1,
+                countTasks = _state.value.countTasks + 1
+            )
+                .updateStateUI()
+        } else {
+            _state.value.copy(
+                countTasks = _state.value.countTasks + 1
+            )
+                .updateStateUI()
+        }
+        if (_state.value.countTasks == _state.value.tasks.size) {
+            _state.value.copy(
+                screenStateRt145 = ScreenStateRt145.ResulQuizState
+            )
+                .updateStateUI()
+        }
+    }
 
 
     private fun MainStateRt145.updateStateUI() {

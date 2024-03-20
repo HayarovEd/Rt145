@@ -9,6 +9,7 @@ data class MainStateRt145 (
     val screenStateRt145: ScreenStateRt145 = ScreenStateRt145.AgeState,
     val selectorQuizRt145: SelectorQuizRt145 = SelectorQuizRt145.FOOTBALL_QUIZ,
     val countGood: Int = 0,
+    val countTasks: Int = 1,
     val tasks: List<QuizTaskRt145> = quizFootball.shuffled(),
     val url: String = "",
     val footballData: List<GameDataRt145> = emptyList(),

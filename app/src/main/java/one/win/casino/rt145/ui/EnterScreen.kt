@@ -26,6 +26,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
+import one.win.casino.rt145.ui.state.MainEventRt145
+import one.win.casino.rt145.ui.state.ScreenStateRt145
 import one.win.casino.rt145.ui.theme.red
 import one.win.casino.rt145.ui.theme.white
 import one.win.casino.rt145.ui.uikit.Banner
@@ -33,10 +35,11 @@ import one.win.casino.rt145.ui.uikit.Banner
 
 @Composable
 fun EnterScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onEvent: (MainEventRt145) -> Unit
 ) {
     BackHandler {
-        //////////
+        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.AgeState))
     }
     Box(
         modifier = modifier.fillMaxSize()
@@ -69,7 +72,7 @@ fun EnterScreen(
                     horizontal = 45.dp, vertical = 12.dp
                 ),
                 onClick = {
-                    //////////////
+                    onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.WebState))
                 }
             ) {
                 Text(
@@ -95,7 +98,7 @@ fun EnterScreen(
                 horizontal = 45.dp, vertical = 12.dp
             ),
             onClick = {
-                //////////////
+                onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.AskState))
             }
         ) {
             Text(
