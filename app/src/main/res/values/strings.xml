@@ -370,5 +370,8 @@
 
     <string name="quiz">Квиз</string>
     <string name="more">Дальше</string>
+    <string name="back">Вернуться</string>
+    <string name="good">Прекрасный результат!\nВы знаток в мире спорта!</string>
+    <string name="bad">Спорт - это жизнь!\nА жизнь - это вечная школа!</string>
 
 </resources>
