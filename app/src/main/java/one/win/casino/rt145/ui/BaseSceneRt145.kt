@@ -37,7 +37,10 @@ fun BaseSceneRt145(
         }
 
         ScreenStateRt145.RemoteCategoryStateRt145 -> {
-
+            CategoryScreenRt145(
+                remoteCategoryRt145 = stateRt145.value.remoteCategoryRt145,
+                onEvent = eventRt145
+            )
         }
 
         ScreenStateRt145.ResulQuizStateRt145 -> {
@@ -58,11 +61,17 @@ fun BaseSceneRt145(
         }
 
         ScreenStateRt145.ScheduleStateRt145 -> {
-
+            ScheduleScreenRt145(
+                remoteCategoryRt145 = stateRt145.value.remoteCategoryRt145,
+                footballData = stateRt145.value.footballData,
+                basketballData = stateRt145.value.basketballData,
+                hockeyData = stateRt145.value.hockeyData,
+                onEvent = eventRt145
+            )
         }
 
         ScreenStateRt145.WebStateRt145 -> {
-
+            WebViewScreen(url = stateRt145.value.urlRt145)
         }
     }
 }

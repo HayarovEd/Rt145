@@ -54,7 +54,7 @@ class MainViewModelRt145 @Inject constructor(
             is ResourceRt145.Success -> {
                 //Log.d("MainViewModelRt145", "result football -${result.data}")
                 _state.value.copy(
-                    footballData = result.data ?: emptyList(),
+                    footballData = result.data?.reversed()?: emptyList(),
                 )
                     .updateStateUIRt145()
             }
@@ -70,7 +70,7 @@ class MainViewModelRt145 @Inject constructor(
             is ResourceRt145.Success -> {
                 //Log.d("MainViewModelRt145", "result basketball -${result.data}")
                 _state.value.copy(
-                    basketballData = result.data ?: emptyList(),
+                    basketballData = result.data?.reversed()?: emptyList(),
                 )
                     .updateStateUIRt145()
             }
@@ -86,7 +86,7 @@ class MainViewModelRt145 @Inject constructor(
             is ResourceRt145.Success -> {
                 //Log.d("MainViewModelRt145", "result hockey -${result.data}")
                 _state.value.copy(
-                    hockeyData = result.data ?: emptyList(),
+                    hockeyData = result.data?.reversed() ?: emptyList(),
                 )
                     .updateStateUIRt145()
             }
