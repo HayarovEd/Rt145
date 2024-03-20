@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 const val URL_ANALYTICS_RT_145 = "https://allsportsapi2.p.rapidapi.com/api/"
 @Module
 @InstallIn(SingletonComponent::class)
-object RtApiModuleRt145 {
+object RtApiMMMModuleRt145 {
     @Provides
     @Singleton
     fun provideApiRt145(): ApiRt145 {
