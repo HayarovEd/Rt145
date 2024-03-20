@@ -194,7 +194,7 @@ fun AgeScreen(
                 contentPadding = PaddingValues(
                     horizontal = 45.dp, vertical = 12.dp
                 ),
-                enabled = year.intValue > 2006,
+                enabled = year.intValue <= 2006,
                 onClick = {
                     onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.EnterState))
                 }

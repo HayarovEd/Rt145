@@ -32,6 +32,7 @@ class MainViewModelRt145 @Inject constructor(
             async { getFootballData() }.onAwait
             async { getBasketballData() }.onAwait
             async { getHockeyData() }.onAwait
+            Log.d("MainViewModelRt145", "savedUrl -${savedUrl}")
             if (savedUrl.isNullOrBlank()) {
                 getUrl()
             } else {
@@ -47,11 +48,11 @@ class MainViewModelRt145 @Inject constructor(
     private suspend fun getFootballData() {
         when (val result = remoteRepositoryRt145.getFootballData()) {
             is ResourceRt145.Error -> {
-                Log.d("MainViewModelRt145", "error football -${result.message}")
+               // Log.d("MainViewModelRt145", "error football -${result.message}")
             }
 
             is ResourceRt145.Success -> {
-                Log.d("MainViewModelRt145", "result football -${result.data}")
+                //Log.d("MainViewModelRt145", "result football -${result.data}")
                 _state.value.copy(
                     footballData = result.data ?: emptyList(),
                 )
@@ -63,11 +64,11 @@ class MainViewModelRt145 @Inject constructor(
     private suspend fun getBasketballData() {
         when (val result = remoteRepositoryRt145.getBasketballData()) {
             is ResourceRt145.Error -> {
-                Log.d("MainViewModelRt145", "error basketball -${result.message}")
+                //Log.d("MainViewModelRt145", "error basketball -${result.message}")
             }
 
             is ResourceRt145.Success -> {
-                Log.d("MainViewModelRt145", "result basketball -${result.data}")
+                //Log.d("MainViewModelRt145", "result basketball -${result.data}")
                 _state.value.copy(
                     basketballData = result.data ?: emptyList(),
                 )
@@ -79,11 +80,11 @@ class MainViewModelRt145 @Inject constructor(
     private suspend fun getHockeyData() {
         when (val result = remoteRepositoryRt145.getIceHockeyData()) {
             is ResourceRt145.Error -> {
-                Log.d("MainViewModelRt145", "error hockey -${result.message}")
+                //Log.d("MainViewModelRt145", "error hockey -${result.message}")
             }
 
             is ResourceRt145.Success -> {
-                Log.d("MainViewModelRt145", "result hockey -${result.data}")
+                //Log.d("MainViewModelRt145", "result hockey -${result.data}")
                 _state.value.copy(
                     hockeyData = result.data ?: emptyList(),
                 )
@@ -95,11 +96,12 @@ class MainViewModelRt145 @Inject constructor(
     private suspend fun getUrl() {
         when (val result = remoteRepositoryRt145.getUrl()) {
             is ResourceRt145.Error -> {
-
+                Log.d("MainViewModelRt145", "url error -${result.message}")
             }
 
             is ResourceRt145.Success -> {
                 if (result.data != null) {
+                    Log.d("MainViewModelRt145", "url SUCCESS -${result.data}")
                     _state.value.copy(
                         url = result.data
                     )
@@ -164,7 +166,7 @@ class MainViewModelRt145 @Inject constructor(
             )
                 .updateStateUI()
         }
-        if (_state.value.countTasks == _state.value.tasks.size) {
+        if (_state.value.countTasks > _state.value.tasks.size) {
             _state.value.copy(
                 screenStateRt145 = ScreenStateRt145.ResulQuizState
             )

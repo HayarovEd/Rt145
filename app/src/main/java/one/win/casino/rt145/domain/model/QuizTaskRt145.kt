@@ -58,10 +58,10 @@ val quizFootball = listOf(
         id = 5,
         question = R.string.f_quest_5,
         answers = listOf(
-            R.string.f_response_1_1,
-            R.string.f_response_1_2,
-            R.string.f_response_1_3,
-            R.string.f_response_1_4
+            R.string.f_response_5_1,
+            R.string.f_response_5_2,
+            R.string.f_response_5_3,
+            R.string.f_response_5_4
         ),
         correctAnswerNum = 4
     ),

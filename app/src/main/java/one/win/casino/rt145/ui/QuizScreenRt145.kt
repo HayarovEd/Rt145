@@ -63,6 +63,7 @@ fun QuizScreenRt145(
         SelectorQuizRt145.BOXING_QUIZ -> stringResource(id = R.string.boxing)
     }
     val (selectedOption, onOptionSelected) = remember { mutableIntStateOf(quizTaskRt145.answers[0]) }
+
     BackHandler {
         onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.SelectQuizState))
     }
@@ -171,6 +172,7 @@ fun QuizScreenRt145(
                     }
                 }
             }
+            val selectedNumber = quizTaskRt145.answers.indexOf(selectedOption)
             Button(
                 modifier = modifier
                     .align(alignment = Alignment.BottomCenter)
@@ -184,7 +186,7 @@ fun QuizScreenRt145(
                 onClick = {
                     onEvent(
                         MainEventRt145.OnAnswer(
-                            answer = selectedOption,
+                            answer = selectedNumber,
                             rightIndex = quizTaskRt145.correctAnswerNum
                         )
                     )
