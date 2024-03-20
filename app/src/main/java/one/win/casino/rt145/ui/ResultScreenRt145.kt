@@ -21,6 +21,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -129,18 +131,41 @@ fun ResultScreenRt145(
                         contentDescription = "",
                         contentScale = ContentScale.FillWidth
                     )
-                    Text(
+                    Box(
                         modifier = modifier
                             .align(alignment = Alignment.Center)
-                            .fillMaxWidth(),
-                        text = "$countGood / $size",
-                        style = TextStyle(
-                            fontSize = 78.sp,
-                            fontWeight = FontWeight(700),
-                            textAlign = TextAlign.Center,
-                            color = whiteRt145
+                            .fillMaxWidth()
+                    ) {
+                        Text(
+                            modifier = modifier
+                                .align(alignment = Alignment.Center)
+                                .fillMaxWidth(),
+                            text = "$countGood / $size",
+                            style = TextStyle(
+                                fontSize = 78.sp,
+                                fontWeight = FontWeight(700),
+                                textAlign = TextAlign.Center,
+                                color = whiteRt145
+                            )
                         )
-                    )
+                        Text(
+                            modifier = modifier
+                                .align(alignment = Alignment.Center)
+                                .fillMaxWidth(),
+                            text = "$countGood / $size",
+                            style = TextStyle(
+                                fontSize = 78.sp,
+                                fontWeight = FontWeight(700),
+                                textAlign = TextAlign.Center,
+                                color = blackRt145,
+                                drawStyle = Stroke(
+                                    miter = 10f,
+                                    width = 5f,
+                                    join = StrokeJoin.Round
+                                )
+                            )
+                        )
+                    }
                 }
                 Spacer(modifier = modifier.height(18.dp))
                 Text(

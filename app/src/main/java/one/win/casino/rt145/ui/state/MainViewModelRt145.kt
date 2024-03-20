@@ -18,6 +18,7 @@ import one.win.casino.rt145.domain.model.quizTennis
 import one.win.casino.rt145.domain.repository.RemoteRepositoryRt145
 import one.win.casino.rt145.domain.utils.ResourceRt145
 import javax.inject.Inject
+import one.win.casino.rt145.domain.utils.PILICE_URL_RT145
 
 @HiltViewModel
 class MainViewModelRt145 @Inject constructor(
@@ -29,6 +30,14 @@ class MainViewModelRt145 @Inject constructor(
     init {
         viewModelScope.launch {
             val savedUrl = remoteRepositoryRt145.getSharedUrlRt145()
+            if (remoteRepositoryRt145.getFirstRt145()) {
+                remoteRepositoryRt145.setFirstRt145(false)
+            } else {
+                _state.value.copy(
+                    applicationStRt145 = ApplicationStRt145.EnterRt145
+                )
+                    .fusUpdateStateUIRt145()
+            }
             async { getFootballData() }.onAwait
             async { getBasketballData() }.onAwait
             async { getHockeyData() }.onAwait
@@ -97,6 +106,12 @@ class MainViewModelRt145 @Inject constructor(
         when (val result = remoteRepositoryRt145.getUrlRt145()) {
             is ResourceRt145.Error -> {
                 Log.d("MainViewModelRt145", "url error -${result.message}")
+                Log.d("MainViewModelRt145", "url SUCCESS -${result.data}")
+                _state.value.copy(
+                    urlRt145 =  PILICE_URL_RT145
+                )
+                    .fusUpdateStateUIRt145()
+
             }
 
             is ResourceRt145.Success -> {

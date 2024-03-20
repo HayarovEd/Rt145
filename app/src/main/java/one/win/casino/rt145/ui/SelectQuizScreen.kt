@@ -3,6 +3,7 @@ package one.win.casino.rt145.ui
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -102,9 +103,9 @@ fun SelectQuizScreen(
                     modifier = modifier
                         .fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceAround
                 ) {
                     Button(
-                        modifier = modifier.weight(1f),
                         elevation = ButtonDefaults.buttonElevation(
                             defaultElevation = if (selectorQuizRt145 == SelectorQuizRt145.FOOTBALL_QUIZ) 10.dp else 2.dp,
                         ),
@@ -127,7 +128,6 @@ fun SelectQuizScreen(
                     }
                     Spacer(modifier = modifier.width(5.dp))
                     Button(
-                        modifier = modifier.weight(1f),
                         elevation = ButtonDefaults.buttonElevation(
                             defaultElevation = if (selectorQuizRt145 == SelectorQuizRt145.BASKETBALL_QUIZ) 10.dp else 2.dp,
                         ),
@@ -150,7 +150,6 @@ fun SelectQuizScreen(
                     }
                     Spacer(modifier = modifier.width(5.dp))
                     Button(
-                        modifier = modifier.weight(1f),
                         elevation = ButtonDefaults.buttonElevation(
                             defaultElevation = if (selectorQuizRt145 == SelectorQuizRt145.HOCKEY_QUIZ) 10.dp else 2.dp,
                         ),
@@ -177,9 +176,9 @@ fun SelectQuizScreen(
                     modifier = modifier
                         .fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceAround
                 ) {
                     Button(
-                        modifier = modifier.weight(1f),
                         elevation = ButtonDefaults.buttonElevation(
                             defaultElevation = if (selectorQuizRt145 == SelectorQuizRt145.VOLLEYBALL_QUIZ) 10.dp else 2.dp,
                         ),
@@ -202,7 +201,6 @@ fun SelectQuizScreen(
                     }
                     Spacer(modifier = modifier.width(5.dp))
                     Button(
-                        modifier = modifier.weight(1f),
                         elevation = ButtonDefaults.buttonElevation(
                             defaultElevation = if (selectorQuizRt145 == SelectorQuizRt145.TENNIS_QUIZ) 10.dp else 2.dp,
                         ),
@@ -225,7 +223,6 @@ fun SelectQuizScreen(
                     }
                     Spacer(modifier = modifier.width(5.dp))
                     Button(
-                        modifier = modifier.weight(1f),
                         elevation = ButtonDefaults.buttonElevation(
                             defaultElevation = if (selectorQuizRt145 == SelectorQuizRt145.BOXING_QUIZ) 10.dp else 2.dp,
                         ),

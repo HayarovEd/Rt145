@@ -182,6 +182,7 @@ fun QuizScreenRt145(
                 colors = ButtonDefaults.buttonColors(
                     containerColor = redRt145
                 ),
+                enabled = selectedOption!=0,
                 contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
                     onEvent(
@@ -190,6 +191,7 @@ fun QuizScreenRt145(
                             rightIndex = quizTaskRt145.correctAnswerNum
                         )
                     )
+                    onOptionSelected(0)
                 }
             ) {
                 Text(

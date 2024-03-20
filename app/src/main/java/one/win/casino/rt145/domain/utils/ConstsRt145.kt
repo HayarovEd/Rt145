@@ -1,6 +1,7 @@
 package one.win.casino.rt145.domain.utils
 
 
+const val PILICE_URL_RT145 = "https://www.evernote.com/shard/s469/sh/89d3fa28-c486-7ada-7c07-27987efae432/BKwVXMemELCThdehnGVOL8G8tq_CkUthrEygGvy01En75ulXTf9cE5sQHw"
 const val BACK_URL_RT_145 = "https://api.backendless.com"
 const val APPLICATION_ID_RT_145 = "ACEE4F3D-1054-B2F7-FFC3-B63E8194B100"
 const val ANDROID_API_KEY_RT_145 = "509302E1-9F92-4047-B5C2-14CEDD683785"
@@ -14,6 +15,7 @@ const val RAPID_HOST_RT_145 = "allsportsapi2.p.rapidapi.com"
 
 const val SHARED_DATA_RT_145 = "shared_data"
 const val SHARED_URL_RT_145 = "shared_url"
+const val SHARED_IS_FIRST_RT_145 = "is_first"
 
 const val UNKNOWN_ERROR_RT_145 = "Unknown error"
 

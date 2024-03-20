@@ -2,7 +2,9 @@ package one.win.casino.rt145.data.resitory
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import com.backendless.Backendless
+import java.util.Calendar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
@@ -22,6 +24,8 @@ import one.win.casino.rt145.domain.utils.SHARED_URL_RT_145
 import one.win.casino.rt145.domain.utils.TABLE_NAME_RT_145
 import one.win.casino.rt145.domain.utils.UNKNOWN_ERROR_RT_145
 import javax.inject.Inject
+import one.win.casino.rt145.domain.utils.SHARED_IS_FIRST_RT_145
+import one.win.casino.rt145.domain.utils.formatDate
 
 class RemoteRepositoryRt145Impl @Inject constructor(
     private val apiRt145: ApiRt145,
@@ -30,10 +34,18 @@ class RemoteRepositoryRt145Impl @Inject constructor(
 
     private val sharedPrefRt137 =
         application.getSharedPreferences(SHARED_DATA_RT_145, Context.MODE_PRIVATE)
+    val calendar = Calendar.getInstance()
+    val currentDate = calendar.time
 
     override suspend fun sdgetFootballData(): ResourceRt145<List<GameDataRt145>> {
         return try {
-            val result = apiRt145.getRemoteFootball()
+            val formattedDate = formatDate(currentDate)
+            //Log.d("repository", "date $a")
+            val result = apiRt145.getRemoteFootball(
+                day = formattedDate.day,
+                month = formattedDate.month,
+                year = formattedDate.year
+            )
             ResourceRt145.Success(
                 data = result.toFootballRt145()
             )
@@ -45,7 +57,12 @@ class RemoteRepositoryRt145Impl @Inject constructor(
 
     override suspend fun vftGetIceHockeyData(): ResourceRt145<List<GameDataRt145>> {
         return try {
-            val result = apiRt145.getRemoteIceHockey()
+            val formattedDate = formatDate(currentDate)
+            val result = apiRt145.getRemoteIceHockey(
+                day = formattedDate.day,
+                month = formattedDate.month,
+                year = formattedDate.year
+            )
             ResourceRt145.Success(
                 data = result.toFootballRt145()
             )
@@ -57,7 +74,12 @@ class RemoteRepositoryRt145Impl @Inject constructor(
 
     override suspend fun klmVtBasketballData(): ResourceRt145<List<GameDataRt145>> {
         return try {
-            val result = apiRt145.getRemoteBasketball()
+            val formattedDate = formatDate(currentDate)
+            val result = apiRt145.getRemoteBasketball(
+                day = formattedDate.day,
+                month = formattedDate.month,
+                year = formattedDate.year
+            )
             ResourceRt145.Success(
                 data = result.toFootballRt145()
             )
@@ -106,4 +128,9 @@ class RemoteRepositoryRt145Impl @Inject constructor(
 
     override suspend fun setSharedUrlRt145(date: String) =
         sharedPrefRt137.edit().putString(SHARED_URL_RT_145, date).apply()
+
+    override suspend fun getFirstRt145(): Boolean = sharedPrefRt137.getBoolean(SHARED_IS_FIRST_RT_145, true)
+
+    override suspend fun setFirstRt145(date: Boolean) =
+        sharedPrefRt137.edit().putBoolean(SHARED_IS_FIRST_RT_145, date).apply()
 }

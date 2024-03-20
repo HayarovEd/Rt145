@@ -111,9 +111,9 @@ fun ScheduleScreenRt145(
                 modifier = modifier
                     .fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceAround
             ) {
                 Button(
-                    modifier = modifier.weight(1f),
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = if (remoteCategoryRt145 == RemoteCategoryRt145.FOOTBALL) 10.dp else 2.dp,
                     ),
@@ -136,7 +136,6 @@ fun ScheduleScreenRt145(
                 }
                 Spacer(modifier = modifier.width(5.dp))
                 Button(
-                    modifier = modifier.weight(1f),
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = if (remoteCategoryRt145 == RemoteCategoryRt145.BASKETBALL) 10.dp else 2.dp,
                     ),
@@ -159,7 +158,6 @@ fun ScheduleScreenRt145(
                 }
                 Spacer(modifier = modifier.width(5.dp))
                 Button(
-                    modifier = modifier.weight(1f),
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = if (remoteCategoryRt145 == RemoteCategoryRt145.HOCKEY) 10.dp else 2.dp,
                     ),

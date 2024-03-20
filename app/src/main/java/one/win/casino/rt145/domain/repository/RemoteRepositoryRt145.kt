@@ -10,4 +10,6 @@ interface RemoteRepositoryRt145 {
     suspend fun getUrlRt145(): ResourceRt145<String>
     suspend fun getSharedUrlRt145(): String?
     suspend fun setSharedUrlRt145(date: String)
+    suspend fun getFirstRt145(): Boolean
+    suspend fun setFirstRt145(date: Boolean)
 }
