@@ -196,7 +196,7 @@ fun AgeScreen(
                 ),
                 enabled = year.intValue <= 2006,
                 onClick = {
-                    onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.EnterStateRt145))
+                    onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.EnterRt145))
                 }
             ) {
                 Text(

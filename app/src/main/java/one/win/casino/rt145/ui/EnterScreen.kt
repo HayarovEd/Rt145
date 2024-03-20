@@ -39,7 +39,7 @@ fun EnterScreen(
     onEvent: (MainEventRt145) -> Unit
 ) {
     BackHandler {
-        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.AgeStateRt145))
+        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.AgeRt145))
     }
     Box(
         modifier = modifier.fillMaxSize()
@@ -72,7 +72,7 @@ fun EnterScreen(
                     horizontal = 45.dp, vertical = 12.dp
                 ),
                 onClick = {
-                    onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.WebStateRt145))
+                    onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.WebRt145))
                 }
             ) {
                 Text(
@@ -98,7 +98,7 @@ fun EnterScreen(
                 horizontal = 45.dp, vertical = 12.dp
             ),
             onClick = {
-                onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.AskStateRt145))
+                onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.AskRt145))
             }
         ) {
             Text(

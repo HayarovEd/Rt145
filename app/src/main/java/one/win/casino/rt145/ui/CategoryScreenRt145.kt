@@ -46,7 +46,7 @@ fun CategoryScreenRt145(
     onEvent: (MainEventRt145) -> Unit
 ) {
     BackHandler {
-        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.EnterStateRt145))
+        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.EnterRt145))
     }
     Scaffold(
         modifier = modifier,
@@ -175,7 +175,7 @@ fun CategoryScreenRt145(
                 ),
                 contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
-                    onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.ScheduleStateRt145))
+                    onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.ScheduleRt145))
                 }
             ) {
                 Text(

@@ -50,7 +50,7 @@ fun SelectQuizScreen(
     onEvent: (MainEventRt145) -> Unit
 ) {
     BackHandler {
-        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.AskStateRt145))
+        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.AskRt145))
     }
     Scaffold(
         modifier = modifier,
@@ -75,7 +75,7 @@ fun SelectQuizScreen(
                 IconButton(
                     modifier = modifier.align(alignment = Alignment.CenterStart),
                     onClick = {
-                        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.AskStateRt145))
+                        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.AskRt145))
                     }
                 ) {
                     Icon(
@@ -310,7 +310,7 @@ fun SelectQuizScreen(
                         horizontal = 45.dp, vertical = 12.dp
                     ),
                     onClick = {
-                        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.QuizStateRt145))
+                        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.QuizRt145))
                     }
                 ) {
                     Text(

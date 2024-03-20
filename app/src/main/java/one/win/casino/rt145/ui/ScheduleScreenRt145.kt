@@ -56,7 +56,7 @@ fun ScheduleScreenRt145(
     onEvent: (MainEventRt145) -> Unit
 ) {
     BackHandler {
-        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.RemoteCategoryStateRt145))
+        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.RemoteCategoryRt145))
     }
     val remoteRt145 = when (remoteCategoryRt145) {
         RemoteCategoryRt145.FOOTBALL -> footballData
@@ -86,7 +86,7 @@ fun ScheduleScreenRt145(
                 IconButton(
                     modifier = modifier.align(alignment = Alignment.CenterStart),
                     onClick = {
-                        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.RemoteCategoryStateRt145))
+                        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.RemoteCategoryRt145))
                     }
                 ) {
                     Icon(

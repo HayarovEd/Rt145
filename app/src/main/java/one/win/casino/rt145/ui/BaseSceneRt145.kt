@@ -14,19 +14,19 @@ fun BaseSceneRt145(
     val eventRt145 = viewModel::onEventRt145
 
     when (stateRt145.value.applicationStRt145) {
-        ApplicationStRt145.AgeStateRt145 -> {
+        ApplicationStRt145.AgeRt145 -> {
             AgeScreen(onEvent = eventRt145)
         }
 
-        ApplicationStRt145.AskStateRt145 -> {
+        ApplicationStRt145.AskRt145 -> {
             AskScreen(onEvent = eventRt145)
         }
 
-        ApplicationStRt145.EnterStateRt145 -> {
+        ApplicationStRt145.EnterRt145 -> {
             EnterScreen(onEvent = eventRt145)
         }
 
-        ApplicationStRt145.QuizStateRt145 -> {
+        ApplicationStRt145.QuizRt145 -> {
             QuizScreenRt145(
                 selectorQuizRt145 = stateRt145.value.selectorQuizRt145,
                 quizTaskRt145 = stateRt145.value.tasksRt145[stateRt145.value.countTasks - 1],
@@ -36,14 +36,14 @@ fun BaseSceneRt145(
             )
         }
 
-        ApplicationStRt145.RemoteCategoryStateRt145 -> {
+        ApplicationStRt145.RemoteCategoryRt145 -> {
             CategoryScreenRt145(
                 remoteCategoryRt145 = stateRt145.value.remoteCategoryRt145,
                 onEvent = eventRt145
             )
         }
 
-        ApplicationStRt145.ResulQuizStateRt145 -> {
+        ApplicationStRt145.ResulQuizRt145 -> {
             ResultScreenRt145(
                 selectorQuizRt145 = stateRt145.value.selectorQuizRt145,
                 size = stateRt145.value.tasksRt145.size,
@@ -52,7 +52,7 @@ fun BaseSceneRt145(
             )
         }
 
-        ApplicationStRt145.SelectQuizStateRt145 -> {
+        ApplicationStRt145.SelectQuizRt145 -> {
             SelectQuizScreen(
                 selectorQuizRt145 = stateRt145.value.selectorQuizRt145,
                 size = stateRt145.value.tasksRt145.size,
@@ -60,7 +60,7 @@ fun BaseSceneRt145(
             )
         }
 
-        ApplicationStRt145.ScheduleStateRt145 -> {
+        ApplicationStRt145.ScheduleRt145 -> {
             ScheduleScreenRt145(
                 remoteCategoryRt145 = stateRt145.value.remoteCategoryRt145,
                 footballData = stateRt145.value.footballData,
@@ -70,7 +70,7 @@ fun BaseSceneRt145(
             )
         }
 
-        ApplicationStRt145.WebStateRt145 -> {
+        ApplicationStRt145.WebRt145 -> {
             WebViewScreen(url = stateRt145.value.urlRt145)
         }
     }

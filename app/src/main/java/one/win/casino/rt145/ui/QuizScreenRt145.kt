@@ -65,7 +65,7 @@ fun QuizScreenRt145(
     val (selectedOption, onOptionSelected) = remember { mutableIntStateOf(quizTaskRt145.answers[0]) }
 
     BackHandler {
-        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.SelectQuizStateRt145))
+        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.SelectQuizRt145))
     }
     Scaffold(
         modifier = modifier,
@@ -90,7 +90,7 @@ fun QuizScreenRt145(
                 IconButton(
                     modifier = modifier.align(alignment = Alignment.CenterStart),
                     onClick = {
-                        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.SelectQuizStateRt145))
+                        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.SelectQuizRt145))
                     }
                 ) {
                     Icon(
