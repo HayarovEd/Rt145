@@ -221,7 +221,7 @@ val quizVolleyBall = listOf(
 )
 
 
-val quizVolleyTennis = listOf(
+val quizTennis = listOf(
     QuizTaskRt145(
         id = 1,
         question = R.string.t_quest_1,
