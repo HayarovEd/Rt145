@@ -15,4 +15,5 @@ data class MainStateRt145 (
     val footballData: List<GameDataRt145> = emptyList(),
     val basketballData: List<GameDataRt145> = emptyList(),
     val hockeyData: List<GameDataRt145> = emptyList(),
+    val remoteCategoryRt145: RemoteCategoryRt145 = RemoteCategoryRt145.FOOTBALL,
 )

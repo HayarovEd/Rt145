@@ -150,6 +150,13 @@ class MainViewModelRt145 @Inject constructor(
                 )
                     .updateStateUIRt145()
             }
+
+            is MainEventRt145.OnSetRemoteCategory -> {
+                _state.value.copy(
+                    remoteCategoryRt145 = eventRt145.remoteCategoryRt145
+                )
+                    .updateStateUIRt145()
+            }
         }
     }
 

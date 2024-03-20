@@ -374,4 +374,8 @@
     <string name="good">Прекрасный результат!\nВы знаток в мире спорта!</string>
     <string name="bad">Спорт - это жизнь!\nА жизнь - это вечная школа!</string>
 
+    <string name="choose_category">ВЫБРАТЬ КАТЕГОРИЮ</string>
+    <string name="confirm">ПОДТВЕРДИТЬ</string>
+
+
 </resources>
