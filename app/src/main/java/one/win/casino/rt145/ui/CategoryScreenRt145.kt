@@ -7,10 +7,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -35,9 +33,8 @@ import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
 import one.win.casino.rt145.ui.state.MainEventRt145
 import one.win.casino.rt145.ui.state.RemoteCategoryRt145
-import one.win.casino.rt145.ui.state.ScreenStateRt145
+import one.win.casino.rt145.ui.state.ApplicationStRt145
 import one.win.casino.rt145.ui.theme.blackRt145
-import one.win.casino.rt145.ui.theme.greyRt145
 import one.win.casino.rt145.ui.theme.redRt145
 import one.win.casino.rt145.ui.theme.whiteRt145
 
@@ -49,7 +46,7 @@ fun CategoryScreenRt145(
     onEvent: (MainEventRt145) -> Unit
 ) {
     BackHandler {
-        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.EnterStateRt145))
+        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.EnterStateRt145))
     }
     Scaffold(
         modifier = modifier,
@@ -178,7 +175,7 @@ fun CategoryScreenRt145(
                 ),
                 contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
-                    onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.ScheduleStateRt145))
+                    onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.ScheduleStateRt145))
                 }
             ) {
                 Text(

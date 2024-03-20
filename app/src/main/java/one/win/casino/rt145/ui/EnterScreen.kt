@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
 import one.win.casino.rt145.ui.state.MainEventRt145
-import one.win.casino.rt145.ui.state.ScreenStateRt145
+import one.win.casino.rt145.ui.state.ApplicationStRt145
 import one.win.casino.rt145.ui.theme.redRt145
 import one.win.casino.rt145.ui.theme.whiteRt145
 import one.win.casino.rt145.ui.uikit.Banner
@@ -39,7 +39,7 @@ fun EnterScreen(
     onEvent: (MainEventRt145) -> Unit
 ) {
     BackHandler {
-        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.AgeStateRt145))
+        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.AgeStateRt145))
     }
     Box(
         modifier = modifier.fillMaxSize()
@@ -72,7 +72,7 @@ fun EnterScreen(
                     horizontal = 45.dp, vertical = 12.dp
                 ),
                 onClick = {
-                    onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.WebStateRt145))
+                    onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.WebStateRt145))
                 }
             ) {
                 Text(
@@ -98,7 +98,7 @@ fun EnterScreen(
                 horizontal = 45.dp, vertical = 12.dp
             ),
             onClick = {
-                onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.AskStateRt145))
+                onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.AskStateRt145))
             }
         ) {
             Text(

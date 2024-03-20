@@ -1,12 +1,10 @@
 package one.win.casino.rt145.ui
 
 import androidx.activity.compose.BackHandler
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,10 +19,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ChipColors
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -32,8 +28,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
@@ -45,8 +39,7 @@ import one.win.casino.rt145.R
 import one.win.casino.rt145.domain.model.GameDataRt145
 import one.win.casino.rt145.ui.state.MainEventRt145
 import one.win.casino.rt145.ui.state.RemoteCategoryRt145
-import one.win.casino.rt145.ui.state.ScreenStateRt145
-import one.win.casino.rt145.ui.state.SelectorQuizRt145
+import one.win.casino.rt145.ui.state.ApplicationStRt145
 import one.win.casino.rt145.ui.theme.blackRt145
 import one.win.casino.rt145.ui.theme.greyRt145
 import one.win.casino.rt145.ui.theme.redRt145
@@ -63,7 +56,7 @@ fun ScheduleScreenRt145(
     onEvent: (MainEventRt145) -> Unit
 ) {
     BackHandler {
-        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.RemoteCategoryStateRt145))
+        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.RemoteCategoryStateRt145))
     }
     val remoteRt145 = when (remoteCategoryRt145) {
         RemoteCategoryRt145.FOOTBALL -> footballData
@@ -93,7 +86,7 @@ fun ScheduleScreenRt145(
                 IconButton(
                     modifier = modifier.align(alignment = Alignment.CenterStart),
                     onClick = {
-                        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.RemoteCategoryStateRt145))
+                        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.RemoteCategoryStateRt145))
                     }
                 ) {
                     Icon(

@@ -123,10 +123,10 @@ class MainViewModelRt145 @Inject constructor(
 
             is MainEventRt145.OnSetScreenState -> {
                 _state.value.copy(
-                    screenStateRt145 = eventRt145.screenStateRt145
+                    applicationStRt145 = eventRt145.applicationStRt145
                 )
                     .updateStateUIRt145()
-                if (eventRt145.screenStateRt145 == ScreenStateRt145.EnterStateRt145) {
+                if (eventRt145.applicationStRt145 == ApplicationStRt145.EnterStateRt145) {
                     _state.value.copy(
                         countGood = 0,
                         countTasks = 1
@@ -175,7 +175,7 @@ class MainViewModelRt145 @Inject constructor(
         }
         if (_state.value.countTasks > _state.value.tasksRt145.size) {
             _state.value.copy(
-                screenStateRt145 = ScreenStateRt145.ResulQuizStateRt145
+                applicationStRt145 = ApplicationStRt145.ResulQuizStateRt145
             )
                 .updateStateUIRt145()
         }

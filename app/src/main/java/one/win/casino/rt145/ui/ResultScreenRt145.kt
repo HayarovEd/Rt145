@@ -33,7 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
 import one.win.casino.rt145.ui.state.MainEventRt145
-import one.win.casino.rt145.ui.state.ScreenStateRt145
+import one.win.casino.rt145.ui.state.ApplicationStRt145
 import one.win.casino.rt145.ui.state.SelectorQuizRt145
 import one.win.casino.rt145.ui.theme.blackRt145
 import one.win.casino.rt145.ui.theme.redRt145
@@ -67,7 +67,7 @@ fun ResultScreenRt145(
         stringResource(id = R.string.bad)
     }
     BackHandler {
-        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.EnterStateRt145))
+        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.EnterStateRt145))
     }
     Scaffold(
         modifier = modifier,
@@ -92,7 +92,7 @@ fun ResultScreenRt145(
                 IconButton(
                     modifier = modifier.align(alignment = Alignment.CenterStart),
                     onClick = {
-                        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.EnterStateRt145))
+                        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.EnterStateRt145))
                     }
                 ) {
                     Icon(
@@ -166,7 +166,7 @@ fun ResultScreenRt145(
                 ),
                 contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
-                    onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.RemoteCategoryStateRt145))
+                    onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.RemoteCategoryStateRt145))
                 }
             ) {
                 Text(
