@@ -179,93 +179,110 @@ fun ScheduleScreenRt145(
                     )
                 }
             }
-            Spacer(modifier = modifier.height(25.dp))
-            LazyColumn(
-                modifier = modifier.fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(15.dp),
-            ) {
-                items(remoteRt145) { remote ->
-                    Card(
-                        modifier = modifier
-                            .fillMaxWidth(),
-                        shape = RoundedCornerShape(20.dp),
-                        elevation = CardDefaults.cardElevation(
-                            defaultElevation = 10.dp
-                        ),
-                        colors = CardDefaults.cardColors(
-                            containerColor = whiteRt145
-                        )
-                    ) {
-                        Column(
+
+            if (remoteRt145.isEmpty()) {
+                Spacer(modifier = modifier.height(100.dp))
+                Text(
+                    text = stringResource(R.string.check_internet),
+                    style = TextStyle(
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight(500),
+                        textAlign = TextAlign.Center,
+                        color = if (remoteCategoryRt145 == RemoteCategoryRt145.HOCKEY) redRt145 else blackRt145,
+                    )
+                )
+            } else {
+                Spacer(modifier = modifier.height(25.dp))
+                LazyColumn(
+                    modifier = modifier.fillMaxWidth(),
+                    verticalArrangement = Arrangement.spacedBy(15.dp),
+                ) {
+                    items(remoteRt145) { remote ->
+                        Card(
                             modifier = modifier
-                                .fillMaxWidth()
-                                .padding(vertical = 17.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally,
+                                .fillMaxWidth(),
+                            shape = RoundedCornerShape(20.dp),
+                            elevation = CardDefaults.cardElevation(
+                                defaultElevation = 10.dp
+                            ),
+                            colors = CardDefaults.cardColors(
+                                containerColor = whiteRt145
+                            )
                         ) {
-                            Text(
-                                text = "${remote.homeScoreRt145} : ${remote.awayScoreRt145}",
-                                style = TextStyle(
-                                    fontSize = 34.sp,
-                                    fontWeight = FontWeight(600),
-                                    textAlign = TextAlign.Center,
-                                    color = blackRt145
-                                )
-                            )
-                            Spacer(modifier = modifier.height(10.dp))
-                            Row(
+                            Column(
                                 modifier = modifier
-                                    .clip(RoundedCornerShape(22.dp))
-                                    .background(color = redRt145)
-                                    .padding(5.dp),
-                                verticalAlignment = Alignment.CenterVertically,
-                            ) {
-                                Icon(
-                                    imageVector = ImageVector.vectorResource(R.drawable.baseline_circle_24),
-                                    contentDescription = "",
-                                    tint = whiteRt145
-                                )
-                                Spacer(modifier = modifier.width(10.dp))
-                                Text(
-                                    text = remote.statusGameRt145,
-                                    style = TextStyle(
-                                        fontSize = 14.sp,
-                                        fontWeight = FontWeight(500), textAlign = TextAlign.Center,
-                                        color = whiteRt145
-                                    )
-                                )
-                            }
-                            Spacer(modifier = modifier.height(10.dp))
-                            Row(
-                                modifier = modifier.fillMaxWidth(),
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.SpaceAround,
+                                    .fillMaxWidth()
+                                    .padding(vertical = 17.dp),
+                                horizontalAlignment = Alignment.CenterHorizontally,
                             ) {
                                 Text(
-                                    text = remote.homeNameRt145,
+                                    text = "${remote.homeScoreRt145} : ${remote.awayScoreRt145}",
                                     style = TextStyle(
-                                        fontSize = 14.sp,
-                                        fontWeight = FontWeight(600), textAlign = TextAlign.Center,
+                                        fontSize = 34.sp,
+                                        fontWeight = FontWeight(600),
+                                        textAlign = TextAlign.Center,
                                         color = blackRt145
                                     )
                                 )
+                                Spacer(modifier = modifier.height(10.dp))
+                                Row(
+                                    modifier = modifier
+                                        .clip(RoundedCornerShape(22.dp))
+                                        .background(color = redRt145)
+                                        .padding(5.dp),
+                                    verticalAlignment = Alignment.CenterVertically,
+                                ) {
+                                    Icon(
+                                        imageVector = ImageVector.vectorResource(R.drawable.baseline_circle_24),
+                                        contentDescription = "",
+                                        tint = whiteRt145
+                                    )
+                                    Spacer(modifier = modifier.width(10.dp))
+                                    Text(
+                                        text = remote.statusGameRt145,
+                                        style = TextStyle(
+                                            fontSize = 14.sp,
+                                            fontWeight = FontWeight(500),
+                                            textAlign = TextAlign.Center,
+                                            color = whiteRt145
+                                        )
+                                    )
+                                }
+                                Spacer(modifier = modifier.height(10.dp))
+                                Row(
+                                    modifier = modifier.fillMaxWidth(),
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.SpaceAround,
+                                ) {
+                                    Text(
+                                        text = remote.homeNameRt145,
+                                        style = TextStyle(
+                                            fontSize = 14.sp,
+                                            fontWeight = FontWeight(600),
+                                            textAlign = TextAlign.Center,
+                                            color = blackRt145
+                                        )
+                                    )
+                                    Text(
+                                        text = remote.awayNameRt145,
+                                        style = TextStyle(
+                                            fontSize = 14.sp,
+                                            fontWeight = FontWeight(600),
+                                            textAlign = TextAlign.Center,
+                                            color = blackRt145
+                                        )
+                                    )
+                                }
+                                Spacer(modifier = modifier.height(10.dp))
                                 Text(
-                                    text = remote.awayNameRt145,
+                                    text = remote.dateTimeRt145,
                                     style = TextStyle(
                                         fontSize = 14.sp,
                                         fontWeight = FontWeight(600), textAlign = TextAlign.Center,
-                                        color = blackRt145
+                                        color = greyRt145
                                     )
                                 )
                             }
-                            Spacer(modifier = modifier.height(10.dp))
-                            Text(
-                                text = remote.dateTimeRt145,
-                                style = TextStyle(
-                                    fontSize = 14.sp,
-                                    fontWeight = FontWeight(600), textAlign = TextAlign.Center,
-                                    color = greyRt145
-                                )
-                            )
                         }
                     }
                 }
