@@ -1,5 +1,7 @@
 package one.win.casino.rt145.ui
 
+import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,7 +16,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
@@ -23,6 +24,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
@@ -44,6 +47,9 @@ fun SelectQuizScreen(
     selectorQuizRt145: SelectorQuizRt145 = SelectorQuizRt145.BASKETBALL_QUIZ,
     size: Int = 10,
 ) {
+    BackHandler {
+        ///////
+    }
     Scaffold(
         modifier = modifier,
         topBar = {
@@ -254,6 +260,21 @@ fun SelectQuizScreen(
                     SelectorQuizRt145.TENNIS_QUIZ -> stringResource(id = R.string.tennis)
                     SelectorQuizRt145.BOXING_QUIZ -> stringResource(id = R.string.boxing)
                 }
+                val image = when (selectorQuizRt145) {
+                    SelectorQuizRt145.FOOTBALL_QUIZ -> painterResource(id = R.drawable.football)
+                    SelectorQuizRt145.BASKETBALL_QUIZ -> painterResource(id = R.drawable.basketball)
+                    SelectorQuizRt145.HOCKEY_QUIZ -> painterResource(id = R.drawable.hokkey)
+                    SelectorQuizRt145.VOLLEYBALL_QUIZ -> painterResource(id = R.drawable.volleyball)
+                    SelectorQuizRt145.TENNIS_QUIZ -> painterResource(id = R.drawable.tennis)
+                    SelectorQuizRt145.BOXING_QUIZ -> painterResource(id = R.drawable.boxing)
+                }
+                Image(
+                    modifier = modifier.fillMaxWidth(),
+                    painter = image,
+                    contentDescription = category,
+                    contentScale = ContentScale.FillWidth
+                )
+                Spacer(modifier = modifier.height(10.dp))
                 Text(
                     text = "${stringResource(id = R.string.categoty)} $category",
                     style = TextStyle(
@@ -265,7 +286,11 @@ fun SelectQuizScreen(
                 )
                 Spacer(modifier = modifier.height(10.dp))
                 Text(
-                    text = "${stringResource(id = R.string.all_in_category)} $size ${stringResource(id = R.string.questions)}",
+                    text = "${stringResource(id = R.string.all_in_category)} $size ${
+                        stringResource(
+                            id = R.string.questions
+                        )
+                    }",
                     style = TextStyle(
                         fontSize = 14.sp,
                         fontWeight = FontWeight(500),

@@ -368,5 +368,7 @@
     <string name="all_in_category">Всего в категории</string>
     <string name="questions">вопросов.</string>
 
+    <string name="quiz">Квиз</string>
+    <string name="more">Дальше</string>
 
 </resources>
