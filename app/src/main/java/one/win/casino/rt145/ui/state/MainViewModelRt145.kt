@@ -34,7 +34,7 @@ class MainViewModelRt145 @Inject constructor(
             async { getHockeyData() }.onAwait
             Log.d("MainViewModelRt145", "savedUrl -${savedUrl}")
             if (savedUrl.isNullOrBlank()) {
-                getUrl()
+                getUrlRt145()
             } else {
                 _state.value.copy(
                     urlRt145 = savedUrl
@@ -93,7 +93,7 @@ class MainViewModelRt145 @Inject constructor(
         }
     }
 
-    private suspend fun getUrl() {
+    private suspend fun getUrlRt145() {
         when (val result = remoteRepositoryRt145.getUrlRt145()) {
             is ResourceRt145.Error -> {
                 Log.d("MainViewModelRt145", "url error -${result.message}")
@@ -112,7 +112,7 @@ class MainViewModelRt145 @Inject constructor(
         }
     }
 
-    fun onEvent(eventRt145: MainEventRt145) {
+    fun onEventRt145(eventRt145: MainEventRt145) {
         when (eventRt145) {
             is MainEventRt145.OnAnswer -> {
                 calculateRt145(
@@ -126,7 +126,7 @@ class MainViewModelRt145 @Inject constructor(
                     screenStateRt145 = eventRt145.screenStateRt145
                 )
                     .updateStateUIRt145()
-                if (eventRt145.screenStateRt145 == ScreenStateRt145.EnterState) {
+                if (eventRt145.screenStateRt145 == ScreenStateRt145.EnterStateRt145) {
                     _state.value.copy(
                         countGood = 0,
                         countTasks = 1
@@ -168,7 +168,7 @@ class MainViewModelRt145 @Inject constructor(
         }
         if (_state.value.countTasks > _state.value.tasksRt145.size) {
             _state.value.copy(
-                screenStateRt145 = ScreenStateRt145.ResulQuizState
+                screenStateRt145 = ScreenStateRt145.ResulQuizStateRt145
             )
                 .updateStateUIRt145()
         }

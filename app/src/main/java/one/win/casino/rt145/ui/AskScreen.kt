@@ -37,7 +37,7 @@ fun AskScreen(
     onEvent: (MainEventRt145) -> Unit
 ) {
     BackHandler {
-        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.EnterState))
+        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.EnterStateRt145))
     }
     Box(
         modifier = modifier.fillMaxSize()
@@ -74,7 +74,7 @@ fun AskScreen(
                 ),
                 contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
-                    onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.SelectQuizState))
+                    onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.SelectQuizStateRt145))
                 }
             ) {
                 Text(
@@ -98,7 +98,7 @@ fun AskScreen(
                 ),
                 contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
-                    onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.RemoteCategoryState))
+                    onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.RemoteCategoryStateRt145))
                 }
             ) {
                 Text(

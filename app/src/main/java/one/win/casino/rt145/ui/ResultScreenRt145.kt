@@ -67,7 +67,7 @@ fun ResultScreenRt145(
         stringResource(id = R.string.bad)
     }
     BackHandler {
-        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.EnterState))
+        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.EnterStateRt145))
     }
     Scaffold(
         modifier = modifier,
@@ -92,7 +92,7 @@ fun ResultScreenRt145(
                 IconButton(
                     modifier = modifier.align(alignment = Alignment.CenterStart),
                     onClick = {
-                        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.EnterState))
+                        onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.EnterStateRt145))
                     }
                 ) {
                     Icon(
@@ -166,7 +166,7 @@ fun ResultScreenRt145(
                 ),
                 contentPadding = PaddingValues(vertical = 12.dp),
                 onClick = {
-                    onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.RemoteCategoryState))
+                    onEvent(MainEventRt145.OnSetScreenState(ScreenStateRt145.RemoteCategoryStateRt145))
                 }
             ) {
                 Text(

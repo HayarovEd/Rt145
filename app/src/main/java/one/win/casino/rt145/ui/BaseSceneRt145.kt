@@ -11,22 +11,22 @@ fun BaseSceneRt145(
     viewModel: MainViewModelRt145 = hiltViewModel()
 ) {
     val stateRt145 = viewModel.state.collectAsState()
-    val eventRt145 = viewModel::onEvent
+    val eventRt145 = viewModel::onEventRt145
 
     when (stateRt145.value.screenStateRt145) {
-        ScreenStateRt145.AgeState -> {
+        ScreenStateRt145.AgeStateRt145 -> {
             AgeScreen(onEvent = eventRt145)
         }
 
-        ScreenStateRt145.AskState -> {
+        ScreenStateRt145.AskStateRt145 -> {
             AskScreen(onEvent = eventRt145)
         }
 
-        ScreenStateRt145.EnterState -> {
+        ScreenStateRt145.EnterStateRt145 -> {
             EnterScreen(onEvent = eventRt145)
         }
 
-        ScreenStateRt145.QuizState -> {
+        ScreenStateRt145.QuizStateRt145 -> {
             QuizScreenRt145(
                 selectorQuizRt145 = stateRt145.value.selectorQuizRt145,
                 quizTaskRt145 = stateRt145.value.tasksRt145[stateRt145.value.countTasks - 1],
@@ -36,11 +36,11 @@ fun BaseSceneRt145(
             )
         }
 
-        ScreenStateRt145.RemoteCategoryState -> {
+        ScreenStateRt145.RemoteCategoryStateRt145 -> {
 
         }
 
-        ScreenStateRt145.ResulQuizState -> {
+        ScreenStateRt145.ResulQuizStateRt145 -> {
             ResultScreenRt145(
                 selectorQuizRt145 = stateRt145.value.selectorQuizRt145,
                 size = stateRt145.value.tasksRt145.size,
@@ -49,7 +49,7 @@ fun BaseSceneRt145(
             )
         }
 
-        ScreenStateRt145.SelectQuizState -> {
+        ScreenStateRt145.SelectQuizStateRt145 -> {
             SelectQuizScreen(
                 selectorQuizRt145 = stateRt145.value.selectorQuizRt145,
                 size = stateRt145.value.tasksRt145.size,
@@ -57,11 +57,11 @@ fun BaseSceneRt145(
             )
         }
 
-        ScreenStateRt145.SheduleState -> {
+        ScreenStateRt145.ScheduleStateRt145 -> {
 
         }
 
-        ScreenStateRt145.WebState -> {
+        ScreenStateRt145.WebStateRt145 -> {
 
         }
     }

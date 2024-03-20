@@ -1,13 +1,13 @@
 package one.win.casino.rt145.ui.state
 
 sealed interface ScreenStateRt145 {
-    data object AgeState : ScreenStateRt145
-    data object EnterState : ScreenStateRt145
-    data object AskState : ScreenStateRt145
-    data object SelectQuizState : ScreenStateRt145
-    data object QuizState : ScreenStateRt145
-    data object ResulQuizState : ScreenStateRt145
-    data object WebState : ScreenStateRt145
-    data object RemoteCategoryState : ScreenStateRt145
-    data object SheduleState : ScreenStateRt145
+    data object AgeStateRt145 : ScreenStateRt145
+    data object EnterStateRt145 : ScreenStateRt145
+    data object AskStateRt145 : ScreenStateRt145
+    data object SelectQuizStateRt145 : ScreenStateRt145
+    data object QuizStateRt145 : ScreenStateRt145
+    data object ResulQuizStateRt145 : ScreenStateRt145
+    data object WebStateRt145 : ScreenStateRt145
+    data object RemoteCategoryStateRt145 : ScreenStateRt145
+    data object ScheduleStateRt145 : ScreenStateRt145
 }

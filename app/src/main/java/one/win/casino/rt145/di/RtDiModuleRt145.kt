@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class DiModuleRt145 {
+abstract class RtDiModuleRt145 {
 
     @Binds
     @Singleton
