@@ -11,11 +11,11 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class RtDiMmmoduleRt145 {
+abstract class RasdRtDiMmmoduleRt145 {
 
     @Binds
     @Singleton
-    abstract fun bindRepositoryRt145(repositoryRt145: RemoteRepositoryRt145Impl): RemoteRepositoryRt145
+    abstract fun fghbindRepositoryRt145(repositoryRt145: RemoteRepositoryRt145Impl): RemoteRepositoryRt145
 
 
 }

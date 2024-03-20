@@ -31,7 +31,7 @@ class RemoteRepositoryRt145Impl @Inject constructor(
     private val sharedPrefRt137 =
         application.getSharedPreferences(SHARED_DATA_RT_145, Context.MODE_PRIVATE)
 
-    override suspend fun getFootballData(): ResourceRt145<List<GameDataRt145>> {
+    override suspend fun sdgetFootballData(): ResourceRt145<List<GameDataRt145>> {
         return try {
             val result = apiRt145.getRemoteFootball()
             ResourceRt145.Success(
@@ -43,7 +43,7 @@ class RemoteRepositoryRt145Impl @Inject constructor(
         }
     }
 
-    override suspend fun getIceHockeyData(): ResourceRt145<List<GameDataRt145>> {
+    override suspend fun vftGetIceHockeyData(): ResourceRt145<List<GameDataRt145>> {
         return try {
             val result = apiRt145.getRemoteIceHockey()
             ResourceRt145.Success(
@@ -55,7 +55,7 @@ class RemoteRepositoryRt145Impl @Inject constructor(
         }
     }
 
-    override suspend fun getBasketballData(): ResourceRt145<List<GameDataRt145>> {
+    override suspend fun klmVtBasketballData(): ResourceRt145<List<GameDataRt145>> {
         return try {
             val result = apiRt145.getRemoteBasketball()
             ResourceRt145.Success(

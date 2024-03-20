@@ -39,14 +39,14 @@ class MainViewModelRt145 @Inject constructor(
                 _state.value.copy(
                     urlRt145 = savedUrl
                 )
-                    .updateStateUIRt145()
+                    .fusUpdateStateUIRt145()
             }
         }
     }
 
 
     private suspend fun getFootballData() {
-        when (val result = remoteRepositoryRt145.getFootballData()) {
+        when (val result = remoteRepositoryRt145.sdgetFootballData()) {
             is ResourceRt145.Error -> {
                // Log.d("MainViewModelRt145", "error football -${result.message}")
             }
@@ -56,13 +56,13 @@ class MainViewModelRt145 @Inject constructor(
                 _state.value.copy(
                     footballData = result.data?.reversed()?: emptyList(),
                 )
-                    .updateStateUIRt145()
+                    .fusUpdateStateUIRt145()
             }
         }
     }
 
     private suspend fun getBasketballData() {
-        when (val result = remoteRepositoryRt145.getBasketballData()) {
+        when (val result = remoteRepositoryRt145.klmVtBasketballData()) {
             is ResourceRt145.Error -> {
                 //Log.d("MainViewModelRt145", "error basketball -${result.message}")
             }
@@ -72,13 +72,13 @@ class MainViewModelRt145 @Inject constructor(
                 _state.value.copy(
                     basketballData = result.data?.reversed()?: emptyList(),
                 )
-                    .updateStateUIRt145()
+                    .fusUpdateStateUIRt145()
             }
         }
     }
 
     private suspend fun getHockeyData() {
-        when (val result = remoteRepositoryRt145.getIceHockeyData()) {
+        when (val result = remoteRepositoryRt145.vftGetIceHockeyData()) {
             is ResourceRt145.Error -> {
                 //Log.d("MainViewModelRt145", "error hockey -${result.message}")
             }
@@ -88,7 +88,7 @@ class MainViewModelRt145 @Inject constructor(
                 _state.value.copy(
                     hockeyData = result.data?.reversed() ?: emptyList(),
                 )
-                    .updateStateUIRt145()
+                    .fusUpdateStateUIRt145()
             }
         }
     }
@@ -105,7 +105,7 @@ class MainViewModelRt145 @Inject constructor(
                     _state.value.copy(
                         urlRt145 = result.data
                     )
-                        .updateStateUIRt145()
+                        .fusUpdateStateUIRt145()
                     remoteRepositoryRt145.setSharedUrlRt145(result.data)
                 }
             }
@@ -125,13 +125,13 @@ class MainViewModelRt145 @Inject constructor(
                 _state.value.copy(
                     applicationStRt145 = eventRt145.applicationStRt145
                 )
-                    .updateStateUIRt145()
+                    .fusUpdateStateUIRt145()
                 if (eventRt145.applicationStRt145 == ApplicationStRt145.EnterRt145) {
                     _state.value.copy(
                         countGood = 0,
                         countTasks = 1
                     )
-                        .updateStateUIRt145()
+                        .fusUpdateStateUIRt145()
                 }
             }
 
@@ -148,14 +148,14 @@ class MainViewModelRt145 @Inject constructor(
                     selectorQuizRt145 = eventRt145.selectorQuizRt145,
                     tasksRt145 = currentTasks,
                 )
-                    .updateStateUIRt145()
+                    .fusUpdateStateUIRt145()
             }
 
             is MainEventRt145.OnSetRemoteCategory -> {
                 _state.value.copy(
                     remoteCategoryRt145 = eventRt145.remoteCategoryRt145
                 )
-                    .updateStateUIRt145()
+                    .fusUpdateStateUIRt145()
             }
         }
     }
@@ -166,23 +166,23 @@ class MainViewModelRt145 @Inject constructor(
                 countGood =  _state.value.countGood + 1,
                 countTasks = _state.value.countTasks + 1
             )
-                .updateStateUIRt145()
+                .fusUpdateStateUIRt145()
         } else {
             _state.value.copy(
                 countTasks = _state.value.countTasks + 1
             )
-                .updateStateUIRt145()
+                .fusUpdateStateUIRt145()
         }
         if (_state.value.countTasks > _state.value.tasksRt145.size) {
             _state.value.copy(
                 applicationStRt145 = ApplicationStRt145.ResulQuizRt145
             )
-                .updateStateUIRt145()
+                .fusUpdateStateUIRt145()
         }
     }
 
 
-    private fun MainStateRt145.updateStateUIRt145() {
+    private fun MainStateRt145.fusUpdateStateUIRt145() {
         _state.update {
             this
         }
