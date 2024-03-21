@@ -9,6 +9,7 @@ const val OBJECT_ID_KEY_RT_145 = "55DF639F-032B-4272-9003-611B5799E80C"
 const val TABLE_NAME_RT_145 = "Time_sport_quiz_145"
 const val NAME_RT_145 = "Time_sport_quiz_145"
 const val METRICA_RT_145 = "ca2344b7-c583-4b3e-a87e-ed01b2c6c956"
+const val BANNER_RT_145 = "demo-appopenad-yandex"
 
 const val RAPID_TOKEN_RT_145 = "e1165db192msh3a5f26ff550a15ep1696b5jsnd8587eba9dc7"
 const val RAPID_HOST_RT_145 = "allsportsapi2.p.rapidapi.com"

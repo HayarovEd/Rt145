@@ -22,6 +22,16 @@ android {
         }
     }
 
+    /*android.signingConfigs {
+        create("release") {
+            storeFile = file("keystore.jks")
+            storePassword = "com.mez.hdu"
+            keyAlias = "key0"
+            keyPassword = "com.mez.hdu"
+            storeType = "jks"
+        }
+    }*/
+
     buildTypes {
         release {
             isMinifyEnabled = false

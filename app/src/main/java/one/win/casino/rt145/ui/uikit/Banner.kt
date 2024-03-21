@@ -12,7 +12,7 @@ import com.yandex.mobile.ads.common.ImpressionData
 
 @Composable
 fun Banner(
-    adId: String = "demo-appopenad-yandex"
+    adId: String = "ddfdfdfdfdf"
 ) {
     AndroidView(factory = { context ->
         BannerAdView(context).apply {
