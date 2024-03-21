@@ -113,16 +113,13 @@ fun SelectQuizScreen(
                         colors = ButtonDefaults.buttonColors(
                             containerColor = whiteRt145,
                         ),
-                        contentPadding = PaddingValues(
-                            horizontal = 5.dp
-                        ),
                         onClick = {
                             onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.FOOTBALL_QUIZ))
                         }) {
                         Text(
                             text = stringResource(id = R.string.football),
                             style = TextStyle(
-                                fontSize = 14.sp,
+                                fontSize = 12.sp,
                                 fontWeight = FontWeight(500),
                                 textAlign = TextAlign.Center,
                                 color = if (selectorQuizRt145 == SelectorQuizRt145.FOOTBALL_QUIZ) redRt145 else blackRt145,
@@ -138,16 +135,13 @@ fun SelectQuizScreen(
                             containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
-                        contentPadding = PaddingValues(
-                            horizontal = 5.dp
-                        ),
                         onClick = {
                             onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.BASKETBALL_QUIZ))
                         }) {
                         Text(
                             text = stringResource(id = R.string.basketball),
                             style = TextStyle(
-                                fontSize = 14.sp,
+                                fontSize = 12.sp,
                                 fontWeight = FontWeight(500),
                                 textAlign = TextAlign.Center,
                                 color = if (selectorQuizRt145 == SelectorQuizRt145.BASKETBALL_QUIZ) redRt145 else blackRt145,
@@ -163,16 +157,13 @@ fun SelectQuizScreen(
                             containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
-                        contentPadding = PaddingValues(
-                            horizontal = 5.dp
-                        ),
                         onClick = {
                             onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.HOCKEY_QUIZ))
                         }) {
                         Text(
                             text = stringResource(id = R.string.hockey),
                             style = TextStyle(
-                                fontSize = 14.sp,
+                                fontSize = 12.sp,
                                 fontWeight = FontWeight(500),
                                 textAlign = TextAlign.Center,
                                 color = if (selectorQuizRt145 == SelectorQuizRt145.HOCKEY_QUIZ) redRt145 else blackRt145,
@@ -195,16 +186,13 @@ fun SelectQuizScreen(
                             containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
-                        contentPadding = PaddingValues(
-                            horizontal = 5.dp
-                        ),
                         onClick = {
                             onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.VOLLEYBALL_QUIZ))
                         }) {
                         Text(
                             text = stringResource(id = R.string.volleyball),
                             style = TextStyle(
-                                fontSize = 14.sp,
+                                fontSize = 12.sp,
                                 fontWeight = FontWeight(500),
                                 textAlign = TextAlign.Center,
                                 color = if (selectorQuizRt145 == SelectorQuizRt145.VOLLEYBALL_QUIZ) redRt145 else blackRt145,
@@ -220,16 +208,13 @@ fun SelectQuizScreen(
                             containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
-                        contentPadding = PaddingValues(
-                            horizontal = 5.dp
-                        ),
                         onClick = {
                             onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.TENNIS_QUIZ))
                         }) {
                         Text(
                             text = stringResource(id = R.string.tennis),
                             style = TextStyle(
-                                fontSize = 14.sp,
+                                fontSize = 12.sp,
                                 fontWeight = FontWeight(500),
                                 textAlign = TextAlign.Center,
                                 color = if (selectorQuizRt145 == SelectorQuizRt145.TENNIS_QUIZ) redRt145 else blackRt145,
@@ -245,16 +230,13 @@ fun SelectQuizScreen(
                             containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
-                        contentPadding = PaddingValues(
-                            horizontal = 5.dp
-                        ),
                         onClick = {
                             onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.BOXING_QUIZ))
                         }) {
                         Text(
                             text = stringResource(id = R.string.boxing),
                             style = TextStyle(
-                                fontSize = 14.sp,
+                                fontSize = 12.sp,
                                 fontWeight = FontWeight(500),
                                 textAlign = TextAlign.Center,
                                 color = if (selectorQuizRt145 == SelectorQuizRt145.BOXING_QUIZ) redRt145 else blackRt145,

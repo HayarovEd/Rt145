@@ -14,4 +14,5 @@ val whiteRt145 = Color(0xFFEEE9E9)
 val redRt145 = Color(0xFFBA1116)
 val blackRt145 = Color(0xFF0F0F0F)
 val greyRt145 = Color(0xFFCCD2DD)
+val roseRt145 = Color(0xFFE01359)
 

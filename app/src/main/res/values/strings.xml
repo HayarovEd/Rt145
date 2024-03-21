@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Rt145</string>
+    <string name="app_name">Время Спорта: Квиз и события</string>
     //Football
     <string name="f_quest_1">В какой стране впервые появился футбол?</string>
     <string name="f_response_1_1">Англия</string>

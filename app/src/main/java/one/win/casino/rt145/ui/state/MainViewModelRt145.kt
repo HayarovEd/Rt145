@@ -41,7 +41,7 @@ class MainViewModelRt145 @Inject constructor(
             async { getFootballData() }.onAwait
             async { getBasketballData() }.onAwait
             async { getHockeyData() }.onAwait
-            Log.d("MainViewModelRt145", "savedUrl -${savedUrl}")
+            //Log.d("MainViewModelRt145", "savedUrl -${savedUrl}")
             if (savedUrl.isNullOrBlank()) {
                 getUrlRt145()
             } else {
@@ -57,7 +57,7 @@ class MainViewModelRt145 @Inject constructor(
     private suspend fun getFootballData() {
         when (val result = remoteRepositoryRt145.sdgetFootballData()) {
             is ResourceRt145.Error -> {
-               // Log.d("MainViewModelRt145", "error football -${result.message}")
+               //Log.d("MainViewModelRt145", "error football -${result.message}")
             }
 
             is ResourceRt145.Success -> {
@@ -93,7 +93,7 @@ class MainViewModelRt145 @Inject constructor(
             }
 
             is ResourceRt145.Success -> {
-                //Log.d("MainViewModelRt145", "result hockey -${result.data}")
+               // Log.d("MainViewModelRt145", "result hockey -${result.data}")
                 _state.value.copy(
                     hockeyData = result.data?.reversed() ?: emptyList(),
                 )
@@ -105,8 +105,8 @@ class MainViewModelRt145 @Inject constructor(
     private suspend fun getUrlRt145() {
         when (val result = remoteRepositoryRt145.getUrlRt145()) {
             is ResourceRt145.Error -> {
-                Log.d("MainViewModelRt145", "url error -${result.message}")
-                Log.d("MainViewModelRt145", "url SUCCESS -${result.data}")
+              //  Log.d("MainViewModelRt145", "url error -${result.message}")
+               // Log.d("MainViewModelRt145", "url SUCCESS -${result.data}")
                 _state.value.copy(
                     urlRt145 =  PILICE_URL_RT145
                 )
@@ -116,7 +116,7 @@ class MainViewModelRt145 @Inject constructor(
 
             is ResourceRt145.Success -> {
                 if (result.data != null) {
-                    Log.d("MainViewModelRt145", "url SUCCESS -${result.data}")
+                    //Log.d("MainViewModelRt145", "url SUCCESS -${result.data}")
                     _state.value.copy(
                         urlRt145 = result.data
                     )

@@ -40,7 +40,7 @@ class RemoteRepositoryRt145Impl @Inject constructor(
     override suspend fun sdgetFootballData(): ResourceRt145<List<GameDataRt145>> {
         return try {
             val formattedDate = formatDate(currentDate)
-            //Log.d("repository", "date $a")
+            //Log.d("MainViewModelRt145", "date -$formattedDate")
             val result = apiRt145.getRemoteFootball(
                 day = formattedDate.day,
                 month = formattedDate.month,

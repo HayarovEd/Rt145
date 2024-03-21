@@ -41,8 +41,8 @@ import one.win.casino.rt145.ui.state.MainEventRt145
 import one.win.casino.rt145.ui.state.RemoteCategoryRt145
 import one.win.casino.rt145.ui.state.ApplicationStRt145
 import one.win.casino.rt145.ui.theme.blackRt145
-import one.win.casino.rt145.ui.theme.greyRt145
 import one.win.casino.rt145.ui.theme.redRt145
+import one.win.casino.rt145.ui.theme.roseRt145
 import one.win.casino.rt145.ui.theme.whiteRt145
 
 
@@ -127,7 +127,7 @@ fun ScheduleScreenRt145(
                     Text(
                         text = stringResource(id = R.string.football),
                         style = TextStyle(
-                            fontSize = 14.sp,
+                            fontSize = 12.sp,
                             fontWeight = FontWeight(500),
                             textAlign = TextAlign.Center,
                             color = if (remoteCategoryRt145 == RemoteCategoryRt145.FOOTBALL) redRt145 else blackRt145,
@@ -149,7 +149,7 @@ fun ScheduleScreenRt145(
                     Text(
                         text = stringResource(id = R.string.basketball),
                         style = TextStyle(
-                            fontSize = 14.sp,
+                            fontSize = 12.sp,
                             fontWeight = FontWeight(500),
                             textAlign = TextAlign.Center,
                             color = if (remoteCategoryRt145 == RemoteCategoryRt145.BASKETBALL) redRt145 else blackRt145,
@@ -171,7 +171,7 @@ fun ScheduleScreenRt145(
                     Text(
                         text = stringResource(id = R.string.hockey),
                         style = TextStyle(
-                            fontSize = 14.sp,
+                            fontSize = 12.sp,
                             fontWeight = FontWeight(500),
                             textAlign = TextAlign.Center,
                             color = if (remoteCategoryRt145 == RemoteCategoryRt145.HOCKEY) redRt145 else blackRt145,
@@ -188,7 +188,7 @@ fun ScheduleScreenRt145(
                         fontSize = 20.sp,
                         fontWeight = FontWeight(500),
                         textAlign = TextAlign.Center,
-                        color = if (remoteCategoryRt145 == RemoteCategoryRt145.HOCKEY) redRt145 else blackRt145,
+                        color = blackRt145,
                     )
                 )
             } else {
@@ -279,7 +279,7 @@ fun ScheduleScreenRt145(
                                     style = TextStyle(
                                         fontSize = 14.sp,
                                         fontWeight = FontWeight(600), textAlign = TextAlign.Center,
-                                        color = greyRt145
+                                        color = roseRt145
                                     )
                                 )
                             }
