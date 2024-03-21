@@ -20,8 +20,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.MutableIntState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -47,12 +46,13 @@ import one.win.casino.rt145.ui.theme.whiteRt145
 @Composable
 fun AgeScreen(
     modifier: Modifier = Modifier,
-    onEvent: (MainEventRt145) -> Unit
+    onEvent: (MainEventRt145) -> Unit,
+    year: MutableIntState,
+    month: MutableIntState,
+    day: MutableIntState
 ) {
     BackHandler {}
-    val day = remember { mutableIntStateOf(1) }
-    val month = remember { mutableIntStateOf(1) }
-    val year = remember { mutableIntStateOf(2009) }
+
     val activity = (LocalContext.current as? Activity)
 
     val warning = buildAnnotatedString {

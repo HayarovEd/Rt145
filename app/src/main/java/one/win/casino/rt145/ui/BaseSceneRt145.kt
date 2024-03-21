@@ -2,6 +2,8 @@ package one.win.casino.rt145.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
 import androidx.hilt.navigation.compose.hiltViewModel
 import one.win.casino.rt145.ui.state.MainViewModelRt145
 import one.win.casino.rt145.ui.state.ApplicationStRt145
@@ -13,9 +15,16 @@ fun BaseSceneRt145(
     val stateRt145 = viewModel.state.collectAsState()
     val eventRt145 = viewModel::onEventRt145
 
+    val day = remember { mutableIntStateOf(1) }
+    val month = remember { mutableIntStateOf(1) }
+    val year = remember { mutableIntStateOf(2009) }
     when (stateRt145.value.applicationStRt145) {
         ApplicationStRt145.AgeRt145 -> {
-            AgeScreen(onEvent = eventRt145)
+            AgeScreen(
+                day = day,
+                month = month,
+                year = year,
+                onEvent = eventRt145)
         }
 
         ApplicationStRt145.AskRt145 -> {
