@@ -13,6 +13,7 @@ import android.webkit.CookieManager
 import android.webkit.MimeTypeMap
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
+import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.addCallback
@@ -23,33 +24,19 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.vectorResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.content.FileProvider
-import one.win.casino.rt145.ui.theme.whiteRt145
 import java.io.File
 import java.io.IOException
+import one.win.casino.rt145.ui.theme.whiteRt145
 
 private var mFilePathCallback: ValueCallback<Array<Uri>>? = null
 private var imageOutputFileUri: Uri? = null
@@ -77,6 +64,8 @@ fun WebViewScreen(
     }
     val context = LocalContext.current
     val onBackPressedDispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
+
+
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -90,7 +79,32 @@ fun WebViewScreen(
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT
                     )
-                    webViewClient = WebViewClient()
+                    webViewClient = object  :WebViewClient() {
+                        override fun shouldOverrideUrlLoading(
+                            view: WebView?,
+                            request: WebResourceRequest?
+                        ): Boolean {
+                            if (request?.url!=null) {
+                                val reqUri: Uri = request.url
+                                val scheme = reqUri.scheme
+                                if (!scheme.equals("https") && !scheme.equals("http")) {
+                                    val newIntent =
+                                        Intent.parseUri(
+                                            reqUri.toString(),
+                                            Intent.URI_INTENT_SCHEME
+                                        )
+                                    return try {
+                                        newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                        startActivity(it, newIntent, null)
+                                        true
+                                    } catch (exc: Exception) {
+                                        false
+                                    }
+                                }
+                                return false
+                            } else return false
+                        }
+                    }
                     webChromeClient = object : WebChromeClient() {
 
                         override fun onShowFileChooser(
