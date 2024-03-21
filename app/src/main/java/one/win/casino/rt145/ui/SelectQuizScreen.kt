@@ -113,6 +113,9 @@ fun SelectQuizScreen(
                         colors = ButtonDefaults.buttonColors(
                             containerColor = whiteRt145,
                         ),
+                        contentPadding = PaddingValues(
+                            horizontal = 5.dp
+                        ),
                         onClick = {
                             onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.FOOTBALL_QUIZ))
                         }) {
@@ -135,6 +138,9 @@ fun SelectQuizScreen(
                             containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
+                        contentPadding = PaddingValues(
+                            horizontal = 5.dp
+                        ),
                         onClick = {
                             onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.BASKETBALL_QUIZ))
                         }) {
@@ -157,6 +163,9 @@ fun SelectQuizScreen(
                             containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
+                        contentPadding = PaddingValues(
+                            horizontal = 5.dp
+                        ),
                         onClick = {
                             onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.HOCKEY_QUIZ))
                         }) {
@@ -186,6 +195,9 @@ fun SelectQuizScreen(
                             containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
+                        contentPadding = PaddingValues(
+                            horizontal = 5.dp
+                        ),
                         onClick = {
                             onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.VOLLEYBALL_QUIZ))
                         }) {
@@ -208,6 +220,9 @@ fun SelectQuizScreen(
                             containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
+                        contentPadding = PaddingValues(
+                            horizontal = 5.dp
+                        ),
                         onClick = {
                             onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.TENNIS_QUIZ))
                         }) {
@@ -230,6 +245,9 @@ fun SelectQuizScreen(
                             containerColor = whiteRt145
                         ),
                         shape = RoundedCornerShape(8.dp),
+                        contentPadding = PaddingValues(
+                            horizontal = 5.dp
+                        ),
                         onClick = {
                             onEvent(MainEventRt145.OnSetTypeQuizState(SelectorQuizRt145.BOXING_QUIZ))
                         }) {
