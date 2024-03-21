@@ -23,7 +23,9 @@ fun BaseSceneRt145(
         }
 
         ApplicationStRt145.EnterRt145 -> {
-            EnterScreen(onEvent = eventRt145)
+            EnterScreen(
+                isFirst = stateRt145.value.isFirst,
+                onEvent = eventRt145)
         }
 
         ApplicationStRt145.QuizRt145 -> {

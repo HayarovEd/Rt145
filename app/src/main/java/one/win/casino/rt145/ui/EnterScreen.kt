@@ -36,10 +36,13 @@ import one.win.casino.rt145.ui.uikit.Banner
 @Composable
 fun EnterScreen(
     modifier: Modifier = Modifier,
+    isFirst: Boolean,
     onEvent: (MainEventRt145) -> Unit
 ) {
     BackHandler {
-        onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.AgeRt145))
+        if (isFirst) {
+            onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.AgeRt145))
+        }
     }
     Box(
         modifier = modifier.fillMaxSize()

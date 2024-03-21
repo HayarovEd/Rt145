@@ -34,7 +34,8 @@ class MainViewModelRt145 @Inject constructor(
                 remoteRepositoryRt145.setFirstRt145(false)
             } else {
                 _state.value.copy(
-                    applicationStRt145 = ApplicationStRt145.EnterRt145
+                    applicationStRt145 = ApplicationStRt145.EnterRt145,
+                    isFirst = false
                 )
                     .fusUpdateStateUIRt145()
             }

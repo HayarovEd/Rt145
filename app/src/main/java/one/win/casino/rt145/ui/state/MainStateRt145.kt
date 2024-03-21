@@ -12,6 +12,7 @@ data class MainStateRt145 (
     val countTasks: Int = 1,
     val tasksRt145: List<QuizTaskRt145> = quizFootball.shuffled(),
     val urlRt145: String = "",
+    val isFirst: Boolean = true,
     val footballData: List<GameDataRt145> = emptyList(),
     val basketballData: List<GameDataRt145> = emptyList(),
     val hockeyData: List<GameDataRt145> = emptyList(),
