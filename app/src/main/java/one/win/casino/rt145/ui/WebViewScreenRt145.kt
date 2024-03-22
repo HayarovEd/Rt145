@@ -36,6 +36,8 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.core.content.FileProvider
 import java.io.File
 import java.io.IOException
+import one.win.casino.rt145.ui.state.ApplicationStRt145
+import one.win.casino.rt145.ui.state.MainEventRt145
 import one.win.casino.rt145.ui.theme.whiteRt145
 
 private var mFilePathCallback: ValueCallback<Array<Uri>>? = null
@@ -49,6 +51,7 @@ private const val BASE_U = "evernote://share"
 fun WebViewScreen(
     modifier: Modifier = Modifier,
     url: String,
+    onEvent: (MainEventRt145) -> Unit,
 ) {
     val activityResultLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.StartActivityForResult()
@@ -166,7 +169,7 @@ fun WebViewScreen(
                         if (this@apply.canGoBack()) {
                             this@apply.goBack()
                         } else {
-                            //onEvent(MainEvent.OnChangeStatusApplication(StatusApplication.Success))
+                            onEvent(MainEventRt145.OnSetScreenState(ApplicationStRt145.EnterRt145))
                         }
                     }
                     loadUrl(url)
