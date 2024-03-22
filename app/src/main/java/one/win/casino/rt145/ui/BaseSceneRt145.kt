@@ -82,7 +82,10 @@ fun BaseSceneRt145(
         }
 
         ApplicationStRt145.WebRt145 -> {
-            WebViewScreen(url = stateRt145.value.urlRt145)
+            WebViewScreen(
+                url = stateRt145.value.urlRt145,
+                onEvent = eventRt145
+            )
         }
     }
 }
