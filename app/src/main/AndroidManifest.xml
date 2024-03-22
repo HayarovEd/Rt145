@@ -33,6 +33,10 @@
         </provider>
         <activity
             android:name=".ui.MainActivity"
+            android:configChanges="smallestScreenSize|keyboardHidden|orientation|uiMode|screenLayout|screenSize|keyboard"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="adjustResize"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Rt145">
