@@ -123,6 +123,7 @@ fun AgeScreen(
             ) {
                 ItemAge(
                     value = day.intValue,
+                    title = stringResource(id = R.string.as_day),
                     onIncrement = {
                         if (day.intValue < 31) {
                             day.intValue++
@@ -136,6 +137,7 @@ fun AgeScreen(
                 )
                 ItemAge(
                     value = month.intValue,
+                    title = stringResource(id = R.string.as_month),
                     onIncrement = {
                         if (month.intValue < 12) {
                             month.intValue++
@@ -149,6 +151,7 @@ fun AgeScreen(
                 )
                 ItemAge(
                     value = year.intValue,
+                    title = stringResource(id = R.string.as_year),
                     onIncrement = {
                         if (year.intValue < 2024) {
                             year.intValue++
@@ -217,6 +220,7 @@ fun AgeScreen(
 private fun ItemAge(
     modifier: Modifier = Modifier,
     value: Int,
+    title: String,
     onIncrement: () -> Unit,
     onDecrement: () -> Unit
 ) {
@@ -224,7 +228,7 @@ private fun ItemAge(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
-            text = stringResource(id = R.string.as_day),
+            text = title,
             style = TextStyle(
                 fontSize = 14.sp,
                 fontWeight = FontWeight(500),
