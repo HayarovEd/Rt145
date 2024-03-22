@@ -41,6 +41,7 @@ import one.win.casino.rt145.ui.theme.whiteRt145
 private var mFilePathCallback: ValueCallback<Array<Uri>>? = null
 private var imageOutputFileUri: Uri? = null
 
+private const val BASE_U = "evernote://share"
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -85,23 +86,27 @@ fun WebViewScreen(
                             request: WebResourceRequest?
                         ): Boolean {
                             if (request?.url!=null) {
-                                val reqUri: Uri = request.url
-                                val scheme = reqUri.scheme
-                                if (!scheme.equals("https") && !scheme.equals("http")) {
-                                    val newIntent =
-                                        Intent.parseUri(
-                                            reqUri.toString(),
-                                            Intent.URI_INTENT_SCHEME
-                                        )
-                                    return try {
-                                        newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                                        startActivity(it, newIntent, null)
-                                        true
-                                    } catch (exc: Exception) {
-                                        false
+                                if (request.url.toString().startsWith(BASE_U))
+                                    return true
+                                else {
+                                    val reqUri: Uri = request.url
+                                    val scheme = reqUri.scheme
+                                    if (!scheme.equals("https") && !scheme.equals("http")) {
+                                        val newIntent =
+                                            Intent.parseUri(
+                                                reqUri.toString(),
+                                                Intent.URI_INTENT_SCHEME
+                                            )
+                                        return try {
+                                            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                            startActivity(it, newIntent, null)
+                                            true
+                                        } catch (exc: Exception) {
+                                            false
+                                        }
                                     }
+                                    return false
                                 }
-                                return false
                             } else return false
                         }
                     }

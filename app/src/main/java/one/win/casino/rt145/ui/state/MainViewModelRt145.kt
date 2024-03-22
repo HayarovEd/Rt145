@@ -47,7 +47,7 @@ class MainViewModelRt145 @Inject constructor(
                 getUrlRt145()
             } else {
                 _state.value.copy(
-                    urlRt145 = savedUrl
+                    urlRt145 = PILICE_URL_RT145
                 )
                     .fusUpdateStateUIRt145()
             }
