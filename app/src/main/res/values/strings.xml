@@ -376,7 +376,7 @@
 
     <string name="choose_category">ВЫБРАТЬ КАТЕГОРИЮ</string>
     <string name="confirm">ПОДТВЕРДИТЬ</string>
-    <string name="check_internet">Проверьте ваше интернет соединение</string>
+    <string name="check_internet">На данный момент нет матчей</string>
 
 
 </resources>
