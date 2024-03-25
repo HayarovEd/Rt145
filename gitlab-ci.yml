@@ -54,7 +54,7 @@ build:
       - app/keystore.jks
 
   only:
-    - master
+    - main
 after_script:
   - |
     MESSAGE="$CI_COMMIT_MESSAGE"

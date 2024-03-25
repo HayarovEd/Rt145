@@ -1,6 +1,6 @@
 package com.timme.sports.qui.zisob.tsqz.domain.model
 
-import one.win.casino.rt145.R
+import com.timme.sports.qui.zisob.tsqz.R
 
 
 val quizHokkey = listOf(
