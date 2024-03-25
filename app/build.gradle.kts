@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "one.win.casino.rt145"
+    namespace = "com.timme.sports.qui.zisob.tsqz"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "one.win.casino.rt145"
+        applicationId = "com.timme.sports.qui.zisob.tsqz"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
