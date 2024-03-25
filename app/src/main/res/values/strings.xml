@@ -1,3 +1,382 @@
 <resources>
-    <string name="app_name">Rt145</string>
+    <string name="app_name">Время Спорта: Квиз и события</string>
+    //Football
+    <string name="f_quest_1">В какой стране впервые появился футбол?</string>
+    <string name="f_response_1_1">Англия</string>
+    <string name="f_response_1_2">Китай</string>
+    <string name="f_response_1_3">Италия</string>
+    <string name="f_response_1_4">Германия</string>
+
+    <string name="f_quest_2">Какова стандартная продолжительность футбольного матча без учета дополнительного времени?</string>
+    <string name="f_response_2_1">45 минут</string>
+    <string name="f_response_2_2">60 минут</string>
+    <string name="f_response_2_3">90 минут</string>
+    <string name="f_response_2_4">120 минут</string>
+
+    <string name="f_quest_3"> Кто часто называется “Рукой Бога” за свой контроверзный, но знаменитый гол на международном футбольном матче?</string>
+    <string name="f_response_3_1">Криштиану Роналду</string>
+    <string name="f_response_3_2">Лионель Месси</string>
+    <string name="f_response_3_3">Эрик Кантона</string>
+    <string name="f_response_3_4">Диего Марадона</string>
+
+    <string name="f_quest_4">Сколько игроков в стандартной футбольной команде?</string>
+    <string name="f_response_4_1">7</string>
+    <string name="f_response_4_2">10</string>
+    <string name="f_response_4_3">11</string>
+    <string name="f_response_4_4">12</string>
+
+    <string name="f_quest_5">Каково максимальное количество замен, разрешенных в стандартном футбольном матче?</string>
+    <string name="f_response_5_1">2</string>
+    <string name="f_response_5_2">3</string>
+    <string name="f_response_5_3">4</string>
+    <string name="f_response_5_4">5</string>
+
+    <string name="f_quest_6">Какова окружность стандартного футбольного мяча?</string>
+    <string name="f_response_6_1">60–65 см</string>
+    <string name="f_response_6_2">70–75 см</string>
+    <string name="f_response_6_3">80–85 см</string>
+    <string name="f_response_6_4">90–95 см</string>
+
+    <string name="f_quest_7">Как называется ситуация, когда счет на конец футбольного матча оказывается ничейным?</string>
+    <string name="f_response_7_1">Ничья</string>
+    <string name="f_response_7_2">Переигровка</string>
+    <string name="f_response_7_3">Дополнительное время</string>
+    <string name="f_response_7_4">Пенальти</string>
+
+    <string name="f_quest_8">Какая часть тела не допускается касаться мяча во время футбольного матча?</string>
+    <string name="f_response_8_1">Голова</string>
+    <string name="f_response_8_2">Грудь</string>
+    <string name="f_response_8_3">Руки</string>
+    <string name="f_response_8_4">Ноги</string>
+
+    <string name="f_quest_9">Каково максимальное количество желтых карточек, которые может получить игрок до дисквалификации?</string>
+    <string name="f_response_9_1">1</string>
+    <string name="f_response_9_2">2</string>
+    <string name="f_response_9_3">3</string>
+    <string name="f_response_9_4">4</string>
+
+    <string name="f_quest_10">Кто известен как “Черная жемчужина” и считается одним из величайших футболистов всех времен?</string>
+    <string name="f_response_10_1">Лионель Месси</string>
+    <string name="f_response_10_2">Криштиану Роналду</string>
+    <string name="f_response_10_3">Пеле</string>
+    <string name="f_response_10_4">Диего Марадона</string>
+
+    //basketball
+    <string name="b_quest_1">Баскетбол был изобретён в:</string>
+    <string name="b_response_1_1">1891 г.</string>
+    <string name="b_response_1_2">1900 г.</string>
+    <string name="b_response_1_3">1918 г.</string>
+
+    <string name="b_quest_2">Изобретатель баскетбола:</string>
+    <string name="b_response_2_1">Чемберлен</string>
+    <string name="b_response_2_2">Нейсмит</string>
+    <string name="b_response_2_3">Коннолли</string>
+
+    <string name="b_quest_3">Международная федерация баскетбола была создана:</string>
+    <string name="b_response_3_1">21 июня 1940 года</string>
+    <string name="b_response_3_2">5 декабря 1955 года</string>
+    <string name="b_response_3_3">18 июня 1932 года</string>
+
+    <string name="b_quest_4">Показательный турнир по баскетболу впервые был организован на:</string>
+    <string name="b_response_4_1">III О..И. в Сент-Луисе</string>
+    <string name="b_response_4_2">I О.И. в Афинах</string>
+    <string name="b_response_4_3">VIII О.И. в Париже</string>
+
+    <string name="b_quest_5">Показательный турнир по баскетболу состоялся в:</string>
+    <string name="b_response_5_1">1924 году</string>
+    <string name="b_response_5_2">1896 году</string>
+    <string name="b_response_5_3">1904 году</string>
+
+    <string name="b_quest_6">Баскетбол в программу Олимпийских игр, был включён в:</string>
+    <string name="b_response_6_1">1908 году, IV О.И., Лондон</string>
+    <string name="b_response_6_2">1936 году, XI- О.И. в Берлине</string>
+    <string name="b_response_6_3">1952 году, XV 0,И., Хельсинки</string>
+
+    <string name="b_quest_7">Впервые женский баскетбол был включён в программу соревнований:</string>
+    <string name="b_response_7_1">XVII О.И. — Рим, 1960 год</string>
+    <string name="b_response_7_2">XIV О.И. — Лондон, 1948 год</string>
+    <string name="b_response_7_3">XXI О.И. — Монреаль, 1976 год</string>
+
+    <string name="b_quest_8">Советские баскетболисты стали чемпионами этих ОИ:</string>
+    <string name="b_response_8_1">XX О.И.- Мюнхен, 1972 год</string>
+    <string name="b_response_8_2">XVIII О.И.- Токио, 1964 год</string>
+    <string name="b_response_8_3">XXI О.И.- Монреаль, 1976 год</string>
+
+    <string name="b_quest_9">Какой приём входит в технику владения мячом:</string>
+    <string name="b_response_9_1">остановки</string>
+    <string name="b_response_9_2">пасы</string>
+    <string name="b_response_9_3">ловлю</string>
+
+    <string name="b_quest_10">Этот приём входит в технику владения мячом:</string>
+    <string name="b_response_10_1">ведение мяча</string>
+    <string name="b_response_10_2">повороты</string>
+    <string name="b_response_10_3">перебежки</string>
+
+    //hokkey
+    <string name="h_quest_1">Название страны, которой присвоен статус – родина хоккея на льду?</string>
+    <string name="h_response_1_1">Англия</string>
+    <string name="h_response_1_2">Канада</string>
+    <string name="h_response_1_3">Россия</string>
+    <string name="h_response_1_4">Франция</string>
+
+    <string name="h_quest_2">Год проведения первого официального хоккейного матча?</string>
+    <string name="h_response_2_1">1875</string>
+    <string name="h_response_2_2">1886</string>
+    <string name="h_response_2_3">1980</string>
+    <string name="h_response_2_4">1879</string>
+
+    <string name="h_quest_3">Из какого материала готовились первые хоккейные шайбы?</string>
+    <string name="h_response_3_1">пластика</string>
+    <string name="h_response_3_2">резины</string>
+    <string name="h_response_3_3">дерева</string>
+    <string name="h_response_3_4">угля</string>
+
+    <string name="h_quest_4">Год формирования первой команды профессиональных хоккеистов?</string>
+    <string name="h_response_4_1">1904</string>
+    <string name="h_response_4_2">1905</string>
+    <string name="h_response_4_3">1945</string>
+    <string name="h_response_4_4">16 век</string>
+
+    <string name="h_quest_5">Страна, занявшая первое место на чемпионате мира по хоккею с шайбой?</string>
+    <string name="h_response_5_1">Канада</string>
+    <string name="h_response_5_2">СССР</string>
+    <string name="h_response_5_3">Чехословакия</string>
+    <string name="h_response_5_4">Германия</string>
+
+    <string name="h_quest_6">Что характерно для свитеров домашней формы хоккеистов КХЛ?</string>
+    <string name="h_response_6_1">яркие цвета</string>
+    <string name="h_response_6_2">темные оттенки</string>
+    <string name="h_response_6_3">натуральная шерсть</string>
+    <string name="h_response_6_4">отсутствие эмблем</string>
+
+    <string name="h_quest_7">Год, в котором прошел первый ЧМ по хоккею?</string>
+    <string name="h_response_7_1">1980</string>
+    <string name="h_response_7_2">1910</string>
+    <string name="h_response_7_3">1920</string>
+    <string name="h_response_7_4">1908</string>
+
+    <string name="h_quest_8">Хоккейная экипировка заимствована у игроков:</string>
+    <string name="h_response_8_1">в бейсбол</string>
+    <string name="h_response_8_2">в лапту</string>
+    <string name="h_response_8_3">в английский футбол</string>
+    <string name="h_response_8_4">в регби</string>
+
+    <string name="h_quest_9">По завершению ежегодных состязаний НХЛ по хоккею победителю вручается приз. Какой это приз?</string>
+    <string name="h_response_9_1">Кубок Конфедераций</string>
+    <string name="h_response_9_2">Кубок Льда и Огня</string>
+    <string name="h_response_9_3">Кубок Чемпиона</string>
+    <string name="h_response_9_4">Кубок Стэнли</string>
+
+    <string name="h_quest_10">Что разрешили в 1910 году в хоккейном матче для повышения скорости игры?</string>
+    <string name="h_response_10_1">замену игроков</string>
+    <string name="h_response_10_2">перерывы в игре</string>
+    <string name="h_response_10_3">игру без правил</string>
+    <string name="h_response_10_4">увеличить количество играющих спортсменов</string>
+
+    //volleyball
+    <string name="v_quest_1">Укажите полный состав волейбольной команды:</string>
+    <string name="v_response_1_1">6 человек, тренер, помощник тренера, массажист, врач</string>
+    <string name="v_response_1_2">10 человек, тренер, помощник тренера, массажист, врач</string>
+    <string name="v_response_1_3">8 человек, тренер, помощник тренера, массажист, врач</string>
+    <string name="v_response_1_4">12 человек, тренер, помощник тренера, массажист, врач</string>
+
+    <string name="v_quest_2">Что означает слово «волейбол»:</string>
+    <string name="v_response_2_1">скользящий мяч</string>
+    <string name="v_response_2_2">удар с лету</string>
+    <string name="v_response_2_3">прыгающий мяч</string>
+
+    <string name="v_quest_3">Размеры игрового поля в волейбол:</string>
+    <string name="v_response_3_1">15х30</string>
+    <string name="v_response_3_2">12х24</string>
+    <string name="v_response_3_3">9х18</string>
+
+    <string name="v_quest_4">Высота сетки у мужчин:</string>
+    <string name="v_response_4_1">2.43</string>
+    <string name="v_response_4_2">2.50</string>
+    <string name="v_response_4_3">2.20</string>
+
+    <string name="v_quest_5">Высота сетки у женщин:</string>
+    <string name="v_response_5_1">2.34</string>
+    <string name="v_response_5_2">2.14</string>
+    <string name="v_response_5_3">2.24</string>
+
+    <string name="v_quest_6">Сколько игроков может находиться на площадке во время игры в одной команде:</string>
+    <string name="v_response_6_1">5</string>
+    <string name="v_response_6_2">6</string>
+    <string name="v_response_6_3">8</string>
+
+    <string name="v_quest_7">Во время игры команда получает очко:</string>
+    <string name="v_response_7_1">мяч попал в сетку</string>
+    <string name="v_response_7_2">мяч вылетел в аут</string>
+    <string name="v_response_7_3">при успешном приземление мяча на площадку соперника</string>
+
+    <string name="v_quest_8">Во время игры команда получает очко:</string>
+    <string name="v_response_8_1">команда соперника совершает ошибку</string>
+    <string name="v_response_8_2">мяч попал в сетку</string>
+    <string name="v_response_8_3">мяч вылетел в аут</string>
+
+    <string name="v_quest_9">Партия считается выигранной, если:</string>
+    <string name="v_response_9_1">команда первая набирает 15 очков с преимуществом минимум 2 очка</string>
+    <string name="v_response_9_2">команда первая набирает 30 очков</string>
+    <string name="v_response_9_3">команда первая набирает 25 очков с преимуществом минимум 2 очка</string>
+
+    <string name="v_quest_10">Сколько раз можно коснуться мяча на площадке:</string>
+    <string name="v_response_10_1">2</string>
+    <string name="v_response_10_2">3</string>
+    <string name="v_response_10_3">1</string>
+
+    //tennis
+    <string name="t_quest_1">Какое женское теннисное соревнование считается самым престижным на свете?</string>
+    <string name="t_response_1_1">Уимблдон (Wimbledon)</string>
+    <string name="t_response_1_2">Australian Open</string>
+    <string name="t_response_1_3">French Open (Ролан Гаррос)</string>
+    <string name="t_response_1_4">US Open</string>
+
+    <string name="t_quest_2">Как называется теннисный турнир, который проходит в Нью-Йорке каждый год?</string>
+    <string name="t_response_2_1">Уимблдон (Wimbledon)</string>
+    <string name="t_response_2_2">Australian Open</string>
+    <string name="t_response_2_3">French Open (Ролан Гаррос)</string>
+    <string name="t_response_2_4">US Open</string>
+
+    <string name="t_quest_3">Сколько гранд-шлем титулов в одиночном разряде выиграл Роджер Федерер?</string>
+    <string name="t_response_3_1">17</string>
+    <string name="t_response_3_2">19</string>
+    <string name="t_response_3_3">20</string>
+    <string name="t_response_3_4">22</string>
+
+    <string name="t_quest_4">Кто из женских теннисисток выиграла больше всего титулов в карьере?</string>
+    <string name="t_response_4_1">Маргарет Корт</string>
+    <string name="t_response_4_2">Серена Уильямс</string>
+    <string name="t_response_4_3">Стефани Граф</string>
+    <string name="t_response_4_4">Мартина Навратилова</string>
+
+    <string name="t_quest_5">Какое мужское теннисное соревнование считается самым престижным и традиционным в мире?</string>
+    <string name="t_response_5_1">Уимблдон (Wimbledon)</string>
+    <string name="t_response_5_2">Australian Open</string>
+    <string name="t_response_5_3">French Open (Ролан Гаррос)</string>
+    <string name="t_response_5_4">US Open</string>
+
+    <string name="t_quest_6">Сколько времени игроку дается на отдых между геймами в теннисе?</string>
+    <string name="t_response_6_1">10 секунд</string>
+    <string name="t_response_6_2">30 секунд</string>
+    <string name="t_response_6_3">1 минута</string>
+    <string name="t_response_6_4">2 минуты</string>
+
+    <string name="t_quest_7">Какой теннисный турнир проводится на красной глине?</string>
+    <string name="t_response_7_1">Australian Open</string>
+    <string name="t_response_7_2">US Open</string>
+    <string name="t_response_7_3">Уимблдон (Wimbledon)</string>
+    <string name="t_response_7_4">French Open (Ролан Гаррос)</string>
+
+    <string name="t_quest_8">С какого расстояния производится подача в теннисе?</string>
+    <string name="t_response_8_1">18 метров</string>
+    <string name="t_response_8_2">23 метра</string>
+    <string name="t_response_8_3">28 метров</string>
+    <string name="t_response_8_4">36 метров</string>
+
+    <string name="t_quest_9">Какой теннисный турнир проводится в Майами каждый год?</string>
+    <string name="t_response_9_1">Australian Open</string>
+    <string name="t_response_9_2">US Open</string>
+    <string name="t_response_9_3">Уимблдон (Wimbledon)</string>
+    <string name="t_response_9_4">Miami Open</string>
+
+    <string name="t_quest_10">В каком году была основана Всемирная теннисная организация (International Tennis Federation)?</string>
+    <string name="t_response_10_1">1901</string>
+    <string name="t_response_10_2">1913</string>
+    <string name="t_response_10_3">1927</string>
+    <string name="t_response_10_4">1945</string>
+
+    //box
+    <string name="bx_quest_1">Какой из этих ударов в боксе наносится снизу согнутой рукой, чаще всего в подбородок?</string>
+    <string name="bx_response_1_1">Нокдаун</string>
+    <string name="bx_response_1_2">Кизами Цуки</string>
+    <string name="bx_response_1_3">Апперкот</string>
+
+    <string name="bx_quest_2">Кто судит поединок боксёров на ринге?</string>
+    <string name="bx_response_2_1">Мастер</string>
+    <string name="bx_response_2_2">Рефери</string>
+    <string name="bx_response_2_3">Арбитр</string>
+
+    <string name="bx_quest_3">Какой из этих терминов не имеет отношения к боксу?</string>
+    <string name="bx_response_3_1">Хук</string>
+    <string name="bx_response_3_2">Джеб</string>
+    <string name="bx_response_3_3">Помп</string>
+
+    <string name="bx_quest_4">Что в соревнованиях принимается за основу при распределении боксёров по категориям?</string>
+    <string name="bx_response_4_1">Индекс массы тела</string>
+    <string name="bx_response_4_2">Вес</string>
+    <string name="bx_response_4_3">Размер рук</string>
+
+    <string name="bx_quest_5">Кто из советских боксеров был двукратным олимпийским чемпионом?</string>
+    <string name="bx_response_5_1">Владимир Енгибарян</string>
+    <string name="bx_response_5_2">Борис Лагутин</string>
+    <string name="bx_response_5_3">Валерий Попенченко</string>
+
+    <string name="bx_quest_6">Каково максимальное число в отсчёте рефери, после которого фиксируется нокаут боксёра?</string>
+    <string name="bx_response_6_1">7</string>
+    <string name="bx_response_6_2">10</string>
+    <string name="bx_response_6_3">13</string>
+
+    <string name="bx_quest_7">У какого боксера такие прозвища: "Король нокаутов", "Крутейший человек на планете", "Кид-Динамит"?</string>
+    <string name="bx_response_7_1">У Майка Тайсона</string>
+    <string name="bx_response_7_2">У Мухаммеда Али</string>
+    <string name="bx_response_7_3">У Марвина Хаглера</string>
+
+    <string name="bx_quest_8">Какого боксерского стиля не существует?</string>
+    <string name="bx_response_8_1">Пойнтер</string>
+    <string name="bx_response_8_2">Аутфайтер</string>
+    <string name="bx_response_8_3">Инфайтер</string>
+
+    <string name="bx_quest_9">Как дословно переводится название защитной стойки в боксе "пик-а-бу"?</string>
+    <string name="bx_response_9_1">Секретное оружие</string>
+    <string name="bx_response_9_2">Игра в прятки</string>
+    <string name="bx_response_9_3">Я тебя поймал</string>
+
+    <string name="bx_quest_10">В каких единицах измеряется вес боксерских перчаток?</string>
+    <string name="bx_response_10_1">В килограммах</string>
+    <string name="bx_response_10_2">В центнерах</string>
+    <string name="bx_response_10_3">В унциях</string>
+
+
+    //AgeScreen
+    <string name="as_your_age">ВАШ ВОЗРАСТ</string>
+    <string name="as_day">День</string>
+    <string name="as_month">Месяц</string>
+    <string name="as_year">Год</string>
+    <string name="as_incorrect_age">Введенный возраст не соответствует\nправилам приложения.</string>
+    <string name="as_change_age">Вы можете изменить дату рождения\nили</string>
+    <string name="as_exit">Выйти</string>
+    <string name="as_from_app">из приложения…</string>
+    <string name="as_continue">ПРОДОЛЖИТЬ</string>
+
+    //EnterScreen
+    <string name="es_enter">Ставка</string>
+    <string name="es_match_schedule">Расписание матчей</string>
+
+    //AskScreen
+    <string name="is_quiz">Уверен в своих\nспортивных знаниях?</string>
+    <string name="go_to_quiz">ПРОЙТИ КВИЗ</string>
+    <string name="skip">Пропустить</string>
+
+    <string name="football">Футбол</string>
+    <string name="basketball">Баскетбол</string>
+    <string name="hockey">Хоккей</string>
+    <string name="volleyball">Волейбол</string>
+    <string name="tennis">Теннис</string>
+    <string name="boxing">Бокс</string>
+    <string name="categoty">Категория</string>
+    <string name="all_in_category">Всего в категории</string>
+    <string name="questions">вопросов.</string>
+
+    <string name="quiz">Квиз</string>
+    <string name="more">Дальше</string>
+    <string name="back">Вернуться</string>
+    <string name="good">Прекрасный результат!\nВы знаток в мире спорта!</string>
+    <string name="bad">Спорт - это жизнь!\nА жизнь - это вечная школа!</string>
+
+    <string name="choose_category">ВЫБРАТЬ КАТЕГОРИЮ</string>
+    <string name="confirm">ПОДТВЕРДИТЬ</string>
+    <string name="check_internet">На данный момент нет матчей</string>
+
+
 </resources>
