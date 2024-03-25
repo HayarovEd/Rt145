@@ -1,13 +1,10 @@
 package one.win.casino.rt145.domain.utils
 
-import android.os.Build
-import androidx.annotation.RequiresApi
+import androidx.compose.ui.graphics.Color
+import one.win.casino.rt145.domain.model.DateFormattedRt145
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 import java.util.Date
 import java.util.Locale
-import one.win.casino.rt145.domain.model.DateFormattedRt145
 
 fun formatTimestamp(timestamp: Long): String {
     val sdf = SimpleDateFormat("dd MMMM yyyy HH:mm", Locale.getDefault())
@@ -24,4 +21,9 @@ fun formatDate(date: Date): DateFormattedRt145 {
         month = formatterMonth.format(date),
         year = formatterYear.format(date)
     )
+}
+
+fun Color.Companion.fromHex(colorString: String): Color {
+    println("colorString: $colorString")
+    return Color(android.graphics.Color.parseColor(colorString))
 }

@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -27,6 +28,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
@@ -37,6 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import one.win.casino.rt145.R
 import one.win.casino.rt145.domain.model.GameDataRt145
+import one.win.casino.rt145.domain.utils.fromHex
 import one.win.casino.rt145.ui.state.MainEventRt145
 import one.win.casino.rt145.ui.state.RemoteCategoryRt145
 import one.win.casino.rt145.ui.state.ApplicationStRt145
@@ -215,21 +218,39 @@ fun ScheduleScreenRt145(
                                     .padding(vertical = 17.dp),
                                 horizontalAlignment = Alignment.CenterHorizontally,
                             ) {
-                                Text(
-                                    text = "${remote.homeScoreRt145} : ${remote.awayScoreRt145}",
-                                    style = TextStyle(
-                                        fontSize = 34.sp,
-                                        fontWeight = FontWeight(600),
-                                        textAlign = TextAlign.Center,
-                                        color = blackRt145
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                ) {
+                                    Box(
+                                        modifier = modifier
+                                            .size(45.dp)
+                                            .clip(shape = RoundedCornerShape(10.dp))
+                                            .background(color = remote.homeColor)
                                     )
-                                )
+                                    Spacer(modifier = modifier.width(10.dp))
+                                    Text(
+                                        text = "${remote.homeScoreRt145} : ${remote.awayScoreRt145}",
+                                        style = TextStyle(
+                                            fontSize = 34.sp,
+                                            fontWeight = FontWeight(600),
+                                            textAlign = TextAlign.Center,
+                                            color = blackRt145
+                                        )
+                                    )
+                                    Spacer(modifier = modifier.width(10.dp))
+                                    Box(
+                                        modifier = modifier
+                                            .size(45.dp)
+                                            .clip(shape = RoundedCornerShape(10.dp))
+                                            .background(color = remote.awayColor)
+                                    )
+                                }
                                 Spacer(modifier = modifier.height(10.dp))
                                 Row(
                                     modifier = modifier
                                         .clip(RoundedCornerShape(22.dp))
                                         .background(color = redRt145)
-                                        .padding(5.dp),
+                                        .padding(vertical = 5.dp, horizontal = 10.dp),
                                     verticalAlignment = Alignment.CenterVertically,
                                 ) {
                                     Icon(
@@ -237,7 +258,7 @@ fun ScheduleScreenRt145(
                                         contentDescription = "",
                                         tint = whiteRt145
                                     )
-                                    Spacer(modifier = modifier.width(10.dp))
+                                    Spacer(modifier = modifier.width(5.dp))
                                     Text(
                                         text = remote.statusGameRt145,
                                         style = TextStyle(
