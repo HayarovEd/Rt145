@@ -66,6 +66,11 @@ fun ScheduleScreenRt145(
         RemoteCategoryRt145.BASKETBALL -> basketballData
         RemoteCategoryRt145.HOCKEY -> hockeyData
     }
+    val icon = when (remoteCategoryRt145) {
+        RemoteCategoryRt145.FOOTBALL -> ImageVector.vectorResource(id = R.drawable.sports_soccer_fill0_wght400_grad0_opsz48)
+        RemoteCategoryRt145.BASKETBALL -> ImageVector.vectorResource(id = R.drawable.baseline_sports_basketball_24)
+        RemoteCategoryRt145.HOCKEY -> ImageVector.vectorResource(id = R.drawable.baseline_sports_hockey_24)
+    }
     Scaffold(
         modifier = modifier,
         topBar = {
@@ -221,11 +226,10 @@ fun ScheduleScreenRt145(
                                 Row(
                                     verticalAlignment = Alignment.CenterVertically,
                                 ) {
-                                    Box(
-                                        modifier = modifier
-                                            .size(45.dp)
-                                            .clip(shape = RoundedCornerShape(10.dp))
-                                            .background(color = remote.homeColor)
+                                    Icon(
+                                        imageVector = icon,
+                                        contentDescription = "",
+                                        tint = remote.homeColor
                                     )
                                     Spacer(modifier = modifier.width(10.dp))
                                     Text(
@@ -238,11 +242,10 @@ fun ScheduleScreenRt145(
                                         )
                                     )
                                     Spacer(modifier = modifier.width(10.dp))
-                                    Box(
-                                        modifier = modifier
-                                            .size(45.dp)
-                                            .clip(shape = RoundedCornerShape(10.dp))
-                                            .background(color = remote.awayColor)
+                                    Icon(
+                                        imageVector = icon,
+                                        contentDescription = "",
+                                        tint = remote.awayColor
                                     )
                                 }
                                 Spacer(modifier = modifier.height(10.dp))
