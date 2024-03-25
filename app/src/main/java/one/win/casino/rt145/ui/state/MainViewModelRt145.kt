@@ -198,6 +198,7 @@ class MainViewModelRt145 @Inject constructor(
 
 
     private fun MainStateRt145.fusUpdateStateUIRt145() {
+        println("setSharedUrlRt14fyuiuirt145uf544")
         _state.update {
             this
         }

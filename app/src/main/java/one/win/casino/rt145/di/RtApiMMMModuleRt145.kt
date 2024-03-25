@@ -16,6 +16,7 @@ object RtApiMMMModuleRt145 {
     @Provides
     @Singleton
     fun provideApiRt145(): ApiRt145 {
+        println("setSharedUrlRt14iuititktff544")
         return Retrofit.Builder()
             .baseUrl(URL_ANALYTICS_RT_145)
             .addConverterFactory(GsonConverterFactory.create())
